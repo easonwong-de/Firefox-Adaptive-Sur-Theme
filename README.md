@@ -27,13 +27,16 @@ Configuration is done through `userChrome.css` and `userContent.css`. Available 
 
 ### `userChrome.css`
 
--   `extension-menu-in-grid.css` (enabled by default)  
+-   `extension-menu-in-grid.css` (enabled by default)
+
     <img width="50%" src="assets/extension-menu-in-grid.png">
 
--   `hide-single-tab.css` (requires removing buttons from the tab bar)  
+-   `hide-single-tab.css` (requires removing buttons from the tab bar)
+
     <img width="50%" src="assets/hide-single-tab.png">
 
--   `mini-tabbar.css`  
+-   `mini-tabbar.css`
+
     <img width="50%" src="assets/mini-tabbar.png">
 
 ### `userContent.css`
