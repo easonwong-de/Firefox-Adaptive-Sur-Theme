@@ -1,0 +1,41 @@
+@import "theme/parts/buttons-fixes.css";
+@import "theme/parts/buttons.css";
+@import "theme/parts/csd.css";
+@import "theme/parts/custom-icons.css";
+@import "theme/parts/entries.css";
+@import "theme/parts/findbar.css";
+@import "theme/parts/headerbar-private-urlbar.css";
+@import "theme/parts/headerbar-urlbar.css";
+@import "theme/parts/headerbar.css";
+@import "theme/parts/icons.css";
+@import "theme/parts/popups-contents.css";
+@import "theme/parts/popups.css";
+@import "theme/parts/remove-white-flash.css";
+@import "theme/parts/scrollbars.css";
+@import "theme/parts/tabsbar.css";
+@import "theme/parts/titlebutton-light.css";
+@import "theme/parts/titlebutton-dark.css";
+@import "theme/parts/toolbox.css";
+@import "theme/parts/windows.css";
+@import "theme/colour.css";
+
+/* Custom settings */
+
+/* @import "theme/customs/drag-window-headerbar-buttons.css"; */
+@import "theme/customs/extension-menu-in-grid.css";
+@import "theme/customs/hide-single-tab.css";
+/* @import "theme/customs/hide-tabview.css"; */
+/* @import "theme/customs/hide-window-buttons.css"; */
+@import "theme/customs/mini-tabbar.css";
+/* @import "theme/customs/revert-to-default-icons.css"; */
+/* @import "theme/customs/rounded-title-buttons.css"; */
+/* @import "theme/customs/symbolic-tab-icons.css"; */
+
+@namespace xul "http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul";
+
+/* Set theme version text in customization panel */
+
+#customization-footer::before {
+	content: "Firefox Adaptive Sur Theme v1.0";
+	padding: 9px;
+}
