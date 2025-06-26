@@ -338,11 +338,6 @@ menupopup > menuitem[_moz-menuactive="true"]:not(:hover) {
 	margin-left: 0 !important;
 }
 
-#nav-bar .toolbaritem-combined-buttons {
-	margin-left: 0 !important;
-	margin-right: 0 !important;
-}
-
 /* Buttons with suggested action */
 
 .panel-footer-button.popup-notification-primary-button,

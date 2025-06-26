@@ -37,10 +37,6 @@
 	margin: 0 !important;
 }
 
-#nav-bar-customization-target > .unified-extensions-item {
-	filter: saturate(0%) brightness(120%) !important;
-}
-
 #widget-overflow-list > .toolbarbutton-1,
 #widget-overflow-fixed-list > .toolbarbutton-1,
 #widget-overflow-fixed-list > .toolbaritem-combined-buttons,

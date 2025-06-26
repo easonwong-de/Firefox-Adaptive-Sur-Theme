@@ -16,7 +16,7 @@
 
 .toolbarbutton-icon {
 	color: inherit;
-	fill: var(--macos-toolbar-color);
+	fill: var(--macos-headerbar-color);
 }
 
 #nav-bar toolbarbutton > *:not(menupopup) {
@@ -27,8 +27,8 @@
 #PersonalToolbar,
 #toolbar-menubar {
 	border: 0 !important;
-	color: var(--macos-toolbar-color);
-	background: var(--macos-toolbar-background) !important;
+	color: var(--macos-headerbar-color);
+	background: var(--macos-headerbar-background) !important;
 	border-bottom: none !important;
 }
 
@@ -47,7 +47,7 @@ findbar {
 #nav-bar:-moz-window-inactive,
 #PersonalToolbar:-moz-window-inactive,
 #toolbar-menubar:-moz-window-inactive {
-	background: var(--macos-inactive-toolbar-background) !important;
+	background: var(--macos-inactive-headerbar-background) !important;
 }
 
 #navigator-toolbox:-moz-window-inactive label,

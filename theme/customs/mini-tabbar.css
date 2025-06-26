@@ -45,7 +45,7 @@ scrollbox[orient="horizontal"] > slot {
 }
 
 #tabbrowser-tabs {
-	background-color: var(--macos-toolbar-background);
+	background-color: var(--macos-headerbar-background);
 }
 
 .tabbrowser-tab {

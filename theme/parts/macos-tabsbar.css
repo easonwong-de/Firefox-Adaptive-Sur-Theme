@@ -482,7 +482,7 @@ toolbar .toolbarbutton-1 {
 
 .tabbrowser-tab > .tab-stack > .tab-background:not([selected]),
 #TabsToolbar-customization-target > toolbarbutton.toolbarbutton-1 {
-	border-top: 1px solid var(--macos-toolbar-border-color) !important;
+	border-top: 1px solid var(--macos-headerbar-border-color) !important;
 	transition: background-color 80ms !important;
 }
 

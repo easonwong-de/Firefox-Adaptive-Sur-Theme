@@ -1,8 +1,8 @@
-/* Entries */
+/* Light blue focus effects on entries */
 
 @namespace xul "http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul";
 
-/* Entries */
+/* Entries dimensions */
 
 #searchbar,
 #search-box,
@@ -75,35 +75,4 @@ menulist,
 #search-box:-moz-window-inactive,
 .findbar-textbox:-moz-window-inactive {
 	color: var(--macos-inactive-urlbar-color) !important;
-}
-
-/* Entries fixes */
-
-#urlbar-container,
-#search-container {
-	padding: 0 !important;
-	margin: 0 3px !important;
-}
-
-.urlbar-input-container {
-	background: transparent !important;
-	border: 0 !important;
-}
-
-#urlbar,
-#searchbar {
-	margin: 0 3px !important;
-	padding: 0 !important;
-	color: initial !important;
-}
-
-.searchbar-textbox {
-	border: 0 !important;
-	padding: 0 !important;
-	margin: 0 !important;
-	min-height: auto !important;
-}
-
-#searchbar > .searchbar-textbox[focused] .searchbar-search-button:not(#hack) {
-	margin: 0 !important;
 }

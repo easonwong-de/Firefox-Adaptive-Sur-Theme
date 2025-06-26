@@ -1,0 +1,432 @@
+/* URL bar & search bar */
+
+@namespace xul "http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul";
+
+/* Headerbar entries */
+#searchbar,
+#urlbar .urlbar-input-container {
+	appearance: none;
+	-moz-appearance: none !important;
+	background: var(--macos-urlbar-background) !important;
+	border: none !important;
+	box-shadow: inset 0 0 0 1px var(--macos-hover-urlbar-border-color) !important;
+	border-radius: var(--macos-headerbar-border-radius) !important;
+	color: var(--macos-urlbar-color) !important;
+	padding: 0 6px !important;
+	height: 32px !important;
+	max-height: 32px !important;
+}
+
+#urlbar {
+	box-shadow: none !important;
+	--urlbar-height: 30px !important;
+	--urlbar-toolbar-height: 30px !important;
+
+	#urlbar-background {
+		outline: none !important;
+		box-shadow: none !important;
+		border: 0 !important;
+		background: transparent !important;
+		border-radius: var(--macos-headerbar-border-radius) !important;
+	}
+
+	&[breakout][breakout-extend] {
+		width: var(--urlbar-width) !important;
+		z-index: 5 !important;
+		padding: 0 !important;
+
+		&[open] {
+			height: auto !important;
+			max-height: unset !important;
+
+			#urlbar-background {
+				box-shadow: var(--macos-urlbar-box-shadow) !important;
+			}
+		}
+
+		.urlbar-input-container {
+			height: 32px !important;
+			max-height: 32px !important;
+			background: var(--macos-urlbar-focus-background) !important;
+			box-shadow: none !important;
+			padding: 0 6px !important;
+
+			&:hover {
+				box-shadow: none !important;
+				padding: 0 6px !important;
+			}
+		}
+	}
+
+	&:not([focused]) #urlbar-input {
+		mask-image: linear-gradient(to left, transparent, black 3ch);
+	}
+
+	#page-action-buttons {
+		filter: saturate(0%) brightness(120%) !important;
+	}
+}
+
+#urlbar-customization-target {
+	max-height: 36px !important;
+}
+
+#searchbar:focus-within,
+#urlbar[focused] .urlbar-input-container {
+	border: none !important;
+	background: var(--macos-urlbar-background) !important;
+	box-shadow: inset 0 0 0 2px var(--macos-focused-urlbar-highlight-color) !important;
+}
+
+/* Badge and buttons on the left */
+#identity-box.chromeUI #identity-icon {
+	width: 12px !important;
+	height: 12px !important;
+}
+
+#identity-icon-label {
+	font-size: 0.75em !important;
+}
+
+#identity-box[pageproxystate="valid"].notSecureText,
+#identity-box[pageproxystate="valid"].chromeUI,
+#identity-box[pageproxystate="valid"].extensionPage,
+#urlbar-label-box {
+	margin-block: 6px !important;
+}
+
+.notification-anchor-icon,
+.identity-box-button,
+#tracking-protection-icon-container {
+	&:not([open="true"]) {
+		opacity: 0.7 !important;
+		background-color: transparent !important;
+	}
+	&:hover:not([open="true"]) {
+		opacity: 1 !important;
+		background-color: transparent !important;
+	}
+	&:hover:active,
+	&[open="true"] {
+		opacity: 1 !important;
+		background-color: transparent !important;
+	}
+}
+
+#notification-popup-box {
+	height: auto !important;
+	&:hover {
+		background-color: transparent !important;
+	}
+}
+
+/* Buttons to the right */
+.urlbar-page-action:not([disabled]),
+#urlbar-go-button,
+.search-go-button {
+	padding: 0 !important;
+	opacity: 0.7 !important;
+	background-color: transparent !important;
+
+	&:hover,
+	&[open],
+	&:hover:active {
+		opacity: 1 !important;
+		background-color: transparent !important;
+	}
+}
+
+/* Search mode indicator */
+#urlbar-search-mode-indicator {
+	font-size: 75%;
+	margin-block: 5px;
+}
+
+/* Centre URL bar text input */
+#urlbar-input {
+	position: absolute;
+	width: 50%;
+	height: 100%;
+	text-align: center !important;
+	transform: translateX(50%);
+	transition: transform 0.3s cubic-bezier(0, 0.7, 0.3, 1);
+
+	#urlbar[focused] & {
+		transform: translateX(0);
+		width: 100%;
+		text-align: left !important;
+	}
+}
+
+/* URL bar results */
+.urlbarView {
+	width: 100% !important;
+	padding: 4px !important;
+	margin: 0 !important;
+	border-radius: var(--macos-menu-border-radius) !important;
+	background: var(--macos-menu-background) !important;
+	border: var(--macos-menu-border) !important;
+	outline: var(--macos-menu-outline) !important;
+	box-shadow: 0 0 15px #00000040 !important;
+
+	.urlbarView-row-inner,
+	.urlbarView-row {
+		min-height: 0 !important;
+		padding: 0 !important;
+		align-items: center !important;
+		border-radius: 4px !important;
+	}
+
+	.urlbarView-row-inner {
+		padding-inline: 10px !important;
+		padding-block: 2px !important;
+	}
+
+	.urlbarView-favicon {
+		width: 12px !important;
+		height: 12px !important;
+	}
+
+	.urlbarView-action,
+	.urlbarView-url {
+		visibility: visible !important;
+		margin: 0 !important;
+		padding-inline: 0 !important;
+		color: inherit !important;
+		opacity: 0.6 !important;
+	}
+
+	.urlbarView-results {
+		padding-block: 0 !important;
+
+		&[wrap] > .urlbarView-row > .urlbarView-row-inner > .urlbarView-no-wrap {
+			flex-basis: 0 !important;
+		}
+		&[wrap] > .urlbarView-row > .urlbarView-row-inner {
+			flex-wrap: nowrap !important;
+		}
+	}
+
+	.urlbarView-row[label] {
+		margin-block-start: 2.5em !important;
+
+		&::before {
+			top: -2.5em !important;
+			width: calc(100% - 18px) !important;
+			padding-block-start: 6px !important;
+			margin-inline: 9px !important;
+			color: var(--macos-menu-separator-color) !important;
+			font-weight: 700 !important;
+			border-top: 1px solid var(--macos-menu-separator-color) !important;
+		}
+	}
+
+	.urlbarView-row,
+	.urlbarView-row[selected] {
+		background-color: transparent !important;
+	}
+
+	.urlbarView-row[selected] {
+		color: inherit !important;
+	}
+
+	.urlbarView-row:not([type="tip"], [type="dynamic"])[selected] > .urlbarView-row-inner,
+	.urlbarView-row-inner[selected] {
+		background-color: var(--macos-menu-button-hover-background) !important;
+		color: inherit !important;
+	}
+
+	.urlbarView-row:not([type="tip"], [type="dynamic"], [has-buttons]):hover > .urlbarView-row-inner,
+	.urlbarView-row[dynamicType="onboardTabToSearch"]:hover > .urlbarView-row-inner,
+	.urlbarView-row[has-buttons] > .urlbarView-row-inner:not([selected]):hover {
+		background-color: var(--macos-menu-item-hover) !important;
+		color: var(--macos-menu-item-hover-color) !important;
+	}
+
+	.urlbarView-title-separator {
+		margin-inline-end: 0.5rem !important;
+		&::before {
+			opacity: 0.6 !important;
+			margin-inline-end: 0 !important;
+		}
+	}
+
+	.urlbarView-row[dynamicType="onboardTabToSearch"] > .urlbarView-row-inner {
+		width: auto !important;
+	}
+
+	.urlbarView-title strong {
+		font-weight: inherit !important;
+	}
+
+	.urlbarView-body-inner {
+		border: 0 !important;
+	}
+
+	.urlbarView-no-wrap {
+		align-items: center !important;
+	}
+
+	.urlbarView-type-icon {
+		display: none !important;
+	}
+
+	.urlbarView-row:is([type="switchtab"], [type="remotetab"])
+		> .urlbarView-row-inner
+		> .urlbarView-no-wrap
+		> .urlbarView-action {
+		padding: 1px 8px !important;
+		margin-inline: 0.5em !important;
+		border-radius: 8px !important;
+		border: var(--macos-menu-border) !important;
+		background-color: transparent !important;
+	}
+
+	:root:not([uidensity="compact"]) & .urlbarView-row:not([type="tip"], [type="dynamic"]) {
+		min-height: 0;
+	}
+
+	.urlbarView-title-separator,
+	.urlbarView-url {
+		visibility: visible !important;
+	}
+
+	.urlbarView-title-separator,
+	.urlbarView-action {
+		display: inherit !important;
+	}
+
+	/* Hide "..." button in entries under "recent search" */
+	.urlbarView-button.urlbarView-button-menu {
+		display: none !important;
+	}
+
+	&:not([noresults]) > .search-one-offs:not([hidden]) {
+		border-top-color: var(--macos-menu-separator-color);
+	}
+}
+
+/* Search engines buttons */
+#urlbar .search-one-offs {
+	display: none !important;
+	padding: 4px 0 0 0 !important;
+
+	&:not([hidden]) {
+		align-items: center !important;
+	}
+}
+
+#urlbar .searchbar-engine-one-off-item {
+	min-width: 30px;
+	height: 20px;
+}
+
+.searchbar-engine-one-off-item {
+	appearance: none;
+	-moz-appearance: none !important;
+	--toolbarbutton-active-background: transparent !important;
+	--toolbarbutton-hover-background: transparent !important;
+	background: var(--macos-button-background) !important;
+	box-shadow: var(--macos-button-box-shadow) !important;
+	border: 1px solid var(--macos-button-border-color) !important;
+	border-left-width: 0 !important;
+	border-bottom-color: var(--macos-button-border-accent-color) !important;
+	padding: 0 2px !important;
+	margin: 0 !important;
+
+	&:hover,
+	&[selected] {
+		background: var(--macos-button-hover-background) !important;
+		color: unset !important;
+	}
+
+	&:first-child {
+		border-radius: 5px 0 0 5px;
+		border-left-width: 1px !important;
+	}
+
+	&.last-engine,
+	&:last-child {
+		border-radius: 0 5px 5px 0;
+	}
+}
+
+#urlbar-anon-search-settings-compact {
+	border-left-width: 1px !important;
+	border-bottom: 1px solid var(--macos-button-border-accent-color) !important;
+	border-radius: 5px;
+	margin-left: 6px !important;
+}
+
+/* URL bar and Search bar */
+#urlbar[focused] .urlbar-textbox-container {
+	margin: -1px !important;
+}
+
+#searchbar > .searchbar-textbox[focused] .searchbar-search-button {
+	margin-left: -1px !important;
+}
+
+#searchbar > .searchbar-textbox[focused] .search-go-button {
+	margin-right: -1px !important;
+}
+
+/* URL bar and Search bar's icons */
+.urlbar-icon,
+.urlbar-icon-wrapper {
+	&:hover,
+	&[open],
+	&:hover:active {
+		background-color: transparent !important;
+		fill-opacity: 1 !important;
+	}
+}
+
+.searchbar-search-button {
+	&:hover .searchbar-search-icon,
+	&[open] .searchbar-search-icon,
+	&:hover:active .searchbar-search-icon {
+		background-color: transparent !important;
+		fill-opacity: 1 !important;
+	}
+}
+
+.urlbar-icon {
+	height: 16px !important;
+	width: 16px !important;
+	margin: auto !important;
+}
+
+/* Fix for firefox v92 onwards that changed icon size on MacOS */
+.urlbar-page-action {
+	padding: inherit !important;
+}
+
+#urlbar-container,
+#search-container {
+	padding: 0 !important;
+	margin: 0 3px !important;
+}
+
+.urlbar-input-container {
+	background: transparent !important;
+	border: 0 !important;
+}
+
+#urlbar,
+#searchbar {
+	margin: 0 3px !important;
+	padding: 0 !important;
+	color: initial !important;
+}
+
+.searchbar-textbox {
+	border: 0 !important;
+	padding: 0 !important;
+	margin: 0 !important;
+	min-height: auto !important;
+}
+
+#searchbar > .searchbar-textbox[focused] .searchbar-search-button:not(#hack) {
+	margin: 0 !important;
+}

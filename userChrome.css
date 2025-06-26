@@ -4,8 +4,8 @@
 @import "theme/parts/macos-custom-icons.css";
 @import "theme/parts/macos-entries.css";
 @import "theme/parts/macos-findbar.css";
-@import "theme/parts/macos-headerbar-private-urlbar.css";
-@import "theme/parts/macos-headerbar-urlbar.css";
+@import "theme/parts/macos-private-urlbar.css";
+@import "theme/parts/macos-urlbar.css";
 @import "theme/parts/macos-headerbar.css";
 @import "theme/parts/macos-icons.css";
 @import "theme/parts/macos-popups-contents.css";
@@ -17,13 +17,13 @@
 @import "theme/parts/macos-titlebutton-dark.css";
 @import "theme/parts/macos-toolbox.css";
 @import "theme/parts/macos-windows.css";
-@import "theme/macos-colour.css";
+@import "theme/macos-styles.css";
 
 /* Custom settings */
 
 /* @import "theme/customs/drag-window-headerbar-buttons.css"; */
 @import "theme/customs/extension-menu-in-grid.css";
-@import "theme/customs/hide-single-tab.css";
+/* @import "theme/customs/hide-single-tab.css"; */
 /* @import "theme/customs/hide-tabview.css"; */
 /* @import "theme/customs/hide-window-buttons.css"; */
 @import "theme/customs/mini-tabbar.css";
@@ -36,6 +36,6 @@
 /* Set theme version text in customization panel */
 
 #customization-footer::before {
-	content: "Firefox Adaptive Sur Theme v1.0";
+	content: "Firefox Adaptive Sur Theme v2.0";
 	padding: 9px;
 }
