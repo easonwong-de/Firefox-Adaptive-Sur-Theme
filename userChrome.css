@@ -1,23 +1,23 @@
-@import "theme/parts/buttons-fixes.css";
-@import "theme/parts/buttons.css";
-@import "theme/parts/csd.css";
-@import "theme/parts/custom-icons.css";
-@import "theme/parts/entries.css";
-@import "theme/parts/findbar.css";
-@import "theme/parts/headerbar-private-urlbar.css";
-@import "theme/parts/headerbar-urlbar.css";
-@import "theme/parts/headerbar.css";
-@import "theme/parts/icons.css";
-@import "theme/parts/popups-contents.css";
-@import "theme/parts/popups.css";
-@import "theme/parts/remove-white-flash.css";
-@import "theme/parts/scrollbars.css";
-@import "theme/parts/tabsbar.css";
-@import "theme/parts/titlebutton-light.css";
-@import "theme/parts/titlebutton-dark.css";
-@import "theme/parts/toolbox.css";
-@import "theme/parts/windows.css";
-@import "theme/colour.css";
+@import "theme/parts/macos-buttons-fixes.css";
+@import "theme/parts/macos-buttons.css";
+@import "theme/parts/macos-csd.css";
+@import "theme/parts/macos-custom-icons.css";
+@import "theme/parts/macos-entries.css";
+@import "theme/parts/macos-findbar.css";
+@import "theme/parts/macos-headerbar-private-urlbar.css";
+@import "theme/parts/macos-headerbar-urlbar.css";
+@import "theme/parts/macos-headerbar.css";
+@import "theme/parts/macos-icons.css";
+@import "theme/parts/macos-popups-contents.css";
+@import "theme/parts/macos-popups.css";
+@import "theme/parts/macos-remove-white-flash.css";
+@import "theme/parts/macos-scrollbars.css";
+@import "theme/parts/macos-tabsbar.css";
+@import "theme/parts/macos-titlebutton-light.css";
+@import "theme/parts/macos-titlebutton-dark.css";
+@import "theme/parts/macos-toolbox.css";
+@import "theme/parts/macos-windows.css";
+@import "theme/macos-colour.css";
 
 /* Custom settings */
 
