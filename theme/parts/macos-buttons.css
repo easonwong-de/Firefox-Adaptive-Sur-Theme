@@ -1,19 +1,20 @@
-/* Buttons */
-
 @namespace xul "http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul";
 
-/* Hide buttons separator */
-
-#nav-bar .toolbaritem-combined-buttons separator {
-	display: none !important;
+.toolbaritem-combined-buttons {
+	margin: 0 !important;
+	/* Hides buttons separator */
+	separator {
+		display: none !important;
+	}
 }
 
-#appMenu-popup .toolbaritem-combined-buttons toolbarseparator {
-	border: 0 !important;
+#appMenu-popup .toolbaritem-combined-buttons {
+	toolbarseparator {
+		border: 0 !important;
+	}
 }
 
-/* Buttons  */
-
+/* Buttons */
 .subviewbutton.panel-subview-footer,
 .subviewbutton.panel-subview-footer-button,
 .panel-footer button,
@@ -52,10 +53,26 @@
 	min-width: 22px !important;
 	color: inherit;
 	transition: all 200ms;
+
+	/* Hover */
+	&:hover {
+		outline: 0 !important;
+		background: var(--macos-button-hover-background) !important;
+	}
+
+	/* Active */
+	&:active,
+	&[checked],
+	&[open],
+	&[checked]:hover,
+	&[open]:hover {
+		background: var(--macos-button-active-background) !important;
+		box-shadow: var(--macos-button-active-box-shadow) !important;
+		border-color: var(--macos-button-active-border-color) !important;
+	}
 }
 
 /* Text buttons */
-
 .subviewbutton.panel-subview-footer,
 .subviewbutton.panel-subview-footer-button,
 .panel-footer button,
@@ -71,141 +88,55 @@
 .dialog-button {
 	padding: var(--macos-menu-item-padding) !important;
 	text-align: left !important;
-}
 
-.subviewbutton.panel-subview-footer label {
-	text-align: center !important;
+	label {
+		text-align: center !important;
+	}
 }
 
 /* Drop down buttons */
-
 #sidebar-switcher-target,
 #viewButton {
 	padding: 2px 16px !important;
 	position: relative !important;
 	flex-basis: auto !important;
-}
 
-#sidebar-switcher-arrow,
-#viewButton .button-menu-dropmarker {
-	/* Arrow position, type b */
-	transform: translate(6px, 0);
+	#sidebar-switcher-arrow,
+	.button-menu-dropmarker {
+		transform: translate(6px, 0);
+	}
 }
 
 .menulist-label-box {
 	padding: 2px 26px 2px 16px !important;
 	position: relative;
-}
 
-.menulist-label-box:after {
-	/* Arrow position */
-	position: absolute !important;
-	right: 8px !important;
-	top: 8px !important;
-}
-
-.menulist-label-box:after {
-	/* Create arrow if icon tag no exist */
-	content: "";
-}
-
-/* Hover buttons */
-
-.subviewbutton.panel-subview-footer:hover,
-.subviewbutton.panel-subview-footer-button:hover,
-.panel-footer button:hover,
-#downloadsHistory:hover,
-#downloadsPanel-mainView .download-state .downloadButton:hover,
-#overflowMenu-customize-button:hover,
-#appMenu-popup .panel-banner-item:hover,
-.subviewbutton-back:hover,
-#appMenu-popup .toolbaritem-combined-buttons toolbarbutton:not(#appMenu-fxa-label):not([disabled]):hover,
-#context-navigation menuitem:not([disabled]):hover,
-.identity-popup-preferences-button:not(#hack):hover,
-.findbar-container toolbarbutton:hover,
-.findbar-closebutton .toolbarbutton-icon:hover,
-#sidebar-switcher-target:hover,
-#viewButton:hover,
-menulist:hover .menulist-label-box,
-.expander-down:hover,
-.expander-up:hover,
-.notification-button:hover,
-.identity-popup-permission-remove-button:hover,
-#identity-popup-security-expander:hover,
-.tracking-protection-button:hover,
-.dialog-button:hover {
-	outline: 0 !important;
-	background: var(--macos-button-hover-background) !important;
-}
-
-/* Active buttons */
-
-.subviewbutton.panel-subview-footer:active,
-.subviewbutton.panel-subview-footer-button:active,
-.panel-footer button:active,
-#downloadsHistory:active,
-#downloadsPanel-mainView .download-state .downloadButton:active,
-#overflowMenu-customize-button:active,
-#appMenu-popup .panel-banner-item:active,
-.subviewbutton-back:not(#hack):active,
-#appMenu-popup .toolbaritem-combined-buttons toolbarbutton:not([disabled]):not(#appMenu-fxa-label):active,
-#context-navigation menuitem:active:not([disabled]),
-.identity-popup-preferences-button:not(#hack):active,
-.findbar-container toolbarbutton[checked],
-.findbar-container toolbarbutton:active,
-#sidebar-switcher-target:active,
-#sidebar-switcher-target.active,
-#viewButton[open],
-menulist[open] .menulist-label-box,
-.expander-down:active,
-.expander-up:active,
-.notification-button:active,
-.identity-popup-permission-remove-button:active,
-#identity-popup-security-expander:active,
-.tracking-protection-button:active,
-.dialog-button:active {
-	background: var(--macos-button-active-background) !important;
-	box-shadow: var(--macos-button-active-box-shadow) !important;
-	border-color: var(--macos-button-active-border-color) !important;
-}
-
-menulist > menupopup > menuitem:is([checked="true"], [selected="true"])::before {
-	margin-inline-start: auto !important;
-}
-
-/* Fix HTML select colour */
-
-menupopup > menuitem,
-menupopup > menucaption,
-menupopup > menu {
-	max-width: none;
-	border-radius: 4px !important;
-	color: var(--macos-button-menulist-color) !important;
-}
-
-menupopup > menuitem[_moz-menuactive="true"]:not(:hover) {
-	background-color: transparent !important;
+	&:after {
+		position: absolute !important;
+		right: 8px !important;
+		top: 8px !important;
+		content: "";
+	}
 }
 
 /* Disabled buttons */
-
 #appMenu-popup .toolbaritem-combined-buttons toolbarbutton[disabled],
 #context-navigation menuitem[disabled],
-#webRTC-shareDevices-notification > .popup-notification-button-container > .popup-notification-primary-button[disabled] {
+#webRTC-shareDevices-notification
+	> .popup-notification-button-container
+	> .popup-notification-primary-button[disabled] {
 	background: var(--macos-button-disabled-background) !important;
 	border-color: var(--macos-button-disabled-border-color) !important;
 	box-shadow: var(--macos-button-disabled-box-shadow) !important;
 	opacity: 1 !important;
-}
 
-#nav-bar toolbarbutton:not(#urlbar-zoom-button)[disabled] image,
-#appMenu-popup .toolbaritem-combined-buttons toolbarbutton[disabled] image,
-#context-navigation menuitem[disabled] image {
-	opacity: 0.4 !important;
-}
+	image {
+		opacity: 0.4 !important;
+	}
 
-#appMenu-popup .toolbaritem-combined-buttons toolbarbutton[disabled]:hover {
-	background: var(--macos-button-disabled-background) !important;
+	&:hover {
+		background: var(--macos-button-disabled-background) !important;
+	}
 }
 
 /* Inactive window buttons */
@@ -215,21 +146,6 @@ menupopup > menuitem[_moz-menuactive="true"]:not(:hover) {
 	background: var(--macos-inactive-button-background) !important;
 	box-shadow: var(--macos-inactive-button-box-shadow) !important;
 	border-color: var(--macos-inactive-button-border-color) !important;
-}
-
-/* Flat buttons */
-.subviewbutton-back:not(#hack):not(.subviewbutton-iconic),
-#TabsToolbar .toolbarbutton-1 {
-	background: transparent !important;
-	box-shadow: none !important;
-	border-color: transparent !important;
-	border-radius: 5px !important;
-}
-
-.subviewbutton-back:not(#hack):not(:active):hover {
-	box-shadow: var(--macos-button-box-shadow) !important;
-	border-color: var(--macos-button-border-color) !important;
-	border-bottom-color: var(--macos-button-border-accent-color) !important;
 }
 
 .close-icon:not(.tab-close-button) {
@@ -242,6 +158,11 @@ menupopup > menuitem[_moz-menuactive="true"]:not(:hover) {
 	width: 28px !important;
 	min-height: 28px !important;
 	min-width: 28px !important;
+
+	&:hover,
+	&:active {
+		outline: 0 !important;
+	}
 }
 
 #sidebar-close:hover {
@@ -249,39 +170,44 @@ menupopup > menuitem[_moz-menuactive="true"]:not(:hover) {
 }
 
 #TabsToolbar .toolbarbutton-1 {
-	margin: 0 0 !important;
-	padding: 0 0 !important;
+	margin: 0 !important;
+	padding: 0 !important;
 	height: 36px !important;
 	width: 36px !important;
-	min-height: 28px !important;
-	min-width: 32px !important;
+	min-height: 36px !important;
+	min-width: 36px !important;
 	border-radius: 0 !important;
-	transition: all 100ms;
-}
+	outline: none !important;
+	border: none !important;
+	fill-opacity: 0.6 !important;
+	background-color: var(--macos-tabbar-tab-background) !important;
 
-#TabsToolbar .toolbarbutton-1 image {
-	margin: 0 0 !important;
-	padding: 0 0 !important;
-	height: 16px !important;
-	width: 16px !important;
-	min-height: 16px !important;
-	min-width: 16px !important;
-}
+	image {
+		margin: 0 !important;
+		padding: 0 !important;
+		height: 16px !important;
+		width: 16px !important;
+		min-height: 16px !important;
+		min-width: 16px !important;
+	}
 
-.close-icon:not(.tab-close-button):hover,
-#TabsToolbar .toolbarbutton-1:not(:active):not([open]):hover {
-	outline: 0 !important;
-}
+	&:not([disabled]) {
+		&:hover,
+		&[open] {
+			fill-opacity: 1 !important;
+			background-color: var(--macos-tabbar-tab-hover-background) !important;
+		}
 
-.close-icon:not(.tab-close-button):active,
-#TabsToolbar .toolbarbutton-1:active,
-#TabsToolbar .toolbarbutton-1[open] {
-	outline: 0 !important;
-	background: var(--macos-headerbar-button-active-background) !important;
+		&:active,
+		&[open],
+		&[open]:hover {
+			fill-opacity: 1 !important;
+			background: var(--macos-headerbar-button-active-background) !important;
+		}
+	}
 }
 
 /* Circle buttons */
-
 #downloadsPanel-mainView .download-state .downloadButton,
 .identity-popup-permission-remove-button:not(#hack) {
 	padding: 0 0 !important;
@@ -293,7 +219,6 @@ menupopup > menuitem[_moz-menuactive="true"]:not(:hover) {
 }
 
 /* Combined buttons */
-
 .subviewbutton.panel-subview-footer:not(:only-of-type):not(:last-of-type),
 .panel-footer button:not(:only-of-type):not(:last-of-type),
 #appMenu-popup .toolbaritem-combined-buttons toolbarbutton:not(:last-of-type):not(#appMenu-zoomEnlarge-button),
@@ -304,27 +229,6 @@ menupopup > menuitem[_moz-menuactive="true"]:not(:hover) {
 	border-bottom-right-radius: 0 !important;
 	border-right-width: 0 !important;
 	margin-right: 0 !important;
-}
-
-#appMenu-zoomReduce-button2 > .toolbarbutton-icon,
-#appMenu-zoomEnlarge-button2 > .toolbarbutton-icon,
-#appMenu-fullscreen-button2 > .toolbarbutton-icon,
-#appMenu-zoomReduce-button2:hover > .toolbarbutton-icon,
-#appMenu-zoomEnlarge-button2:hover > .toolbarbutton-icon,
-#appMenu-fullscreen-button2:hover > .toolbarbutton-icon,
-#appMenu-zoomReduce-button2:active > .toolbarbutton-icon,
-#appMenu-zoomEnlarge-button2:active > .toolbarbutton-icon,
-#appMenu-fullscreen-button2:active > .toolbarbutton-icon {
-	stroke: transparent !important;
-}
-
-#appMenu-zoomReset-button2:not([disabled]) > .toolbarbutton-text,
-#appMenu-fullscreen-button2:not([disabled]) > .toolbarbutton-icon,
-#appMenu-zoomReset-button2:not([disabled]):hover > .toolbarbutton-text,
-#appMenu-fullscreen-button2:not([disabled]):hover > .toolbarbutton-icon,
-#appMenu-zoomReset-button2:not([disabled]):active > .toolbarbutton-text,
-#appMenu-fullscreen-button2:not([disabled]):active > .toolbarbutton-icon {
-	background-color: transparent !important;
 }
 
 .subviewbutton.panel-subview-footer:not(:only-of-type):not(:first-of-type),
@@ -339,7 +243,6 @@ menupopup > menuitem[_moz-menuactive="true"]:not(:hover) {
 }
 
 /* Buttons with suggested action */
-
 .panel-footer-button.popup-notification-primary-button,
 #appMenu-popup .panel-banner-item[notificationid="update-restart"],
 #editBookmarkPanelDoneButton,
@@ -350,27 +253,20 @@ menupopup > menuitem[_moz-menuactive="true"]:not(:hover) {
 	border-bottom-color: var(--macos-button-suggested-action-border-accent-color) !important;
 	box-shadow: var(--macos-button-suggested-action-box-shadow) !important;
 	text-shadow: 0 -1px #0000008f !important;
-}
 
-.panel-footer-button.popup-notification-primary-button:hover,
-#appMenu-popup .panel-banner-item[notificationid="update-restart"]:hover,
-button.popup-notification-primary-button.popup-notification-button:hover,
-#editBookmarkPanelDoneButton:hover {
-	background: var(--macos-button-suggested-action-hover-background) !important;
-}
+	&:hover {
+		background: var(--macos-button-suggested-action-hover-background) !important;
+	}
 
-.panel-footer-button.popup-notification-primary-button:active,
-#appMenu-popup .panel-banner-item[notificationid="update-restart"]:active,
-button.popup-notification-primary-button.popup-notification-button:active,
-#editBookmarkPanelDoneButton:active {
-	background: var(--macos-button-suggested-action-active-background) !important;
-	border-color: var(--macos-button-suggested-action-active-border-color) !important;
-	box-shadow: var(--macos-button-suggested-action-active-box-shadow) !important;
-	text-shadow: none !important;
+	&:active {
+		background: var(--macos-button-suggested-action-active-background) !important;
+		border-color: var(--macos-button-suggested-action-active-border-color) !important;
+		box-shadow: var(--macos-button-suggested-action-active-box-shadow) !important;
+		text-shadow: none !important;
+	}
 }
 
 /* Buttons with destructive action */
-
 #editBookmarkPanelRemoveButton,
 #PanelUI-panic-view-button {
 	color: #ffffff !important;
@@ -379,38 +275,53 @@ button.popup-notification-primary-button.popup-notification-button:active,
 	border-bottom-color: var(--macos-button-destructive-action-border-accent-color) !important;
 	box-shadow: var(--macos-button-destructive-action-box-shadow) !important;
 	text-shadow: 0 -1px #0000008e !important;
+
+	&:hover,
+	.identity-popup-permission-remove-button:not(#hack):hover {
+		background: var(--macos-button-destructive-action-hover-background) !important;
+		border-color: var(--macos-button-destructive-action-border-color) !important;
+		border-bottom-color: var(--macos-button-destructive-action-border-accent-color) !important;
+		box-shadow: var(--macos-button-destructive-action-box-shadow) !important;
+	}
+
+	&:active,
+	.identity-popup-permission-remove-button:not(#hack):active {
+		background: var(--macos-button-destructive-action-active-background) !important;
+		border-color: var(--macos-button-destructive-action-active-border-color) !important;
+		box-shadow: var(--macos-button-destructive-action-active-box-shadow) !important;
+	}
 }
 
-#editBookmarkPanelRemoveButton:hover,
-.identity-popup-permission-remove-button:not(#hack):hover,
-#PanelUI-panic-view-button:hover {
-	background: var(--macos-button-destructive-action-hover-background) !important;
+/* Account menu button */
+#fxa-toolbar-menu-button {
+	.toolbarbutton-badge-stack {
+		margin: 0 !important;
+	}
+
+	#fxa-avatar-image {
+		width: 16px !important;
+		height: 16px !important;
+		margin: 0 !important;
+		padding: 0 !important;
+	}
+	.toolbarbutton-icon {
+		opacity: 0 !important;
+	}
 }
 
-#editBookmarkPanelRemoveButton:active,
-.identity-popup-permission-remove-button:not(#hack):active,
-#PanelUI-panic-view-button:active {
-	background: var(--macos-button-destructive-action-active-background) !important;
-	border-color: var(--macos-button-destructive-action-active-border-color) !important;
-	box-shadow: var(--macos-button-destructive-action-active-box-shadow) !important;
+/* Misc */
+menulist > menupopup > menuitem:is([checked="true"], [selected="true"])::before {
+	margin-inline-start: auto !important;
 }
 
-.identity-popup-permission-remove-button:not(#hack):hover {
-	/* Is flat */
-	border-color: var(--macos-button-destructive-action-border-color) !important;
-	border-bottom-color: var(--macos-button-destructive-action-border-accent-color) !important;
-	box-shadow: var(--macos-button-destructive-action-box-shadow) !important;
+menupopup > menuitem,
+menupopup > menucaption,
+menupopup > menu {
+	max-width: none;
+	border-radius: 4px !important;
+	color: var(--macos-button-menulist-color) !important;
 }
 
-/* User sync menu, bigger avatar */
-
-#fxa-toolbar-menu-button .toolbarbutton-badge-stack {
-	margin: 0 !important;
-}
-
-#fxa-avatar-image {
-	height: 16px !important;
-	margin: 0 !important;
-	padding: 0 !important;
-	width: 16px !important;
+menupopup > menuitem[_moz-menuactive="true"]:not(:hover) {
+	background-color: transparent !important;
 }

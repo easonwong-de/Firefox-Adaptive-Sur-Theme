@@ -1,90 +1,88 @@
-/* Popups contents syles */
+/* Popups contents styles */
 
 @namespace xul "http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul";
 
 /* Style main context menu & buttons */
-
-#context-navigation > menuitem > .menu-iconic-left {
-	margin: auto !important;
-}
-
-#context-navigation menuitem {
-	--toolbarbutton-active-background: transparent !important;
-	--toolbarbutton-hover-background: transparent !important;
+#context-navigation {
+	> menuitem > .menu-iconic-left {
+		margin: auto !important;
+	}
+	menuitem {
+		--toolbarbutton-active-background: transparent !important;
+		--toolbarbutton-hover-background: transparent !important;
+	}
 }
 
 /* Remove icons from the main context menu */
-
-#contentAreaContextMenu menuitem image,
-#contentAreaContextMenu menu image {
-	visibility: hidden;
-}
-
-#contentAreaContextMenu menugroup menuitem image {
-	visibility: visible;
+#contentAreaContextMenu {
+	menuitem image,
+	menu image {
+		visibility: hidden;
+	}
+	menugroup menuitem image {
+		visibility: visible;
+	}
 }
 
 /* Main menu */
+#appMenu-popup {
+	.panel-banner-item:after {
+		order: 0;
+		margin: 0 8px 0 0 !important;
+	}
+	.toolbaritem-combined-buttons {
+		margin-inline-end: 0 !important;
+		.before-label {
+			width: 5px !important;
+		}
+	}
 
-#appMenu-popup .panel-banner-item:after {
-	order: 0;
-	margin: 0 8px 0 0 !important;
-}
+	#appMenu-fxa-status[fxastatus="signedin"] > #appMenu-fxa-label,
+	#appMenu-fxa-container[fxastatus="signedin"] > #appMenu-fxa-status > #appMenu-fxa-label {
+		padding-left: 28px !important;
+	}
 
-#appMenu-popup .toolbaritem-combined-buttons {
-	margin-inline-end: 0 !important;
-}
-
-#appMenu-popup .toolbaritem-combined-buttons .before-label {
-	width: 5px !important;
-}
-
-#appMenu-fxa-status[fxastatus="signedin"] > #appMenu-fxa-label,
-#appMenu-fxa-container[fxastatus="signedin"] > #appMenu-fxa-status > #appMenu-fxa-label {
-	padding-left: 28px !important;
-}
-
-/* User sync account remove avatar */
-
-#fxa-menu-avatar {
-	display: none;
+	/* User sync account remove avatar */
+	#fxa-menu-avatar {
+		display: none;
+	}
 }
 
 /* Add search engine button remove icon */
-
 #pageAction-panel-addSearchEngine .toolbarbutton-badge-stack {
 	display: none !important;
 }
 
 /* Tab view items */
-
 .all-tabs-button.subviewbutton.subviewbutton-iconic,
 .all-tabs-close-button.all-tabs-secondary-button.subviewbutton {
 	min-height: min-content !important;
 	padding: 0 !important;
 }
 
-.all-tabs-item > .all-tabs-secondary-button label {
-	margin: 0 !important;
+.all-tabs-item {
+	> .all-tabs-secondary-button label {
+		margin: 0 !important;
+	}
+	&[selected] .toolbarbutton-text {
+		font: menu !important;
+		font-weight: 600 !important;
+	}
 }
 
-.all-tabs-item[selected] .toolbarbutton-text {
-	font: menu !important;
-	font-weight: 600 !important;
-}
-
-#nav-bar #allTabsMenu-allTabsView .panel-subview-body .all-tabs-item toolbarbutton.all-tabs-close-button:hover,
-#nav-bar #allTabsMenu-hiddenTabsView-tabs .panel-subview-body .all-tabs-item toolbarbutton.all-tabs-close-button:hover {
-	background-color: var(--macos-button-hover-color) !important;
-}
-
-#nav-bar #allTabsMenu-allTabsView .panel-subview-body .all-tabs-item toolbarbutton.all-tabs-close-button:active,
-#nav-bar #allTabsMenu-hiddenTabsView-tabs .panel-subview-body .all-tabs-item toolbarbutton.all-tabs-close-button:active {
-	background-color: var(--macos-button-active-color) !important;
+#nav-bar {
+	#allTabsMenu-allTabsView .panel-subview-body .all-tabs-item toolbarbutton.all-tabs-close-button,
+	#allTabsMenu-hiddenTabsView-tabs .panel-subview-body .all-tabs-item toolbarbutton.all-tabs-close-button {
+		&:hover {
+			background-color: var(--macos-button-hover-color) !important;
+		}
+		&:active {
+			background-color: var(--macos-button-active-color) !important;
+		}
+	}
 }
 
 /* "History, bookmarks, and more" popover */
-
 #PanelUI-bookmarks,
 #PanelUI-history {
 	min-width: min-content !important;
@@ -92,70 +90,65 @@
 }
 
 /* Downloads popover */
+#downloadsPanel {
+	#downloadsPanel-blockedSubview,
+	#downloadsPanel-mainView {
+		padding: 0 !important;
+	}
 
-#downloadsPanel-blockedSubview,
-#downloadsPanel-mainView {
-	padding: 0 !important;
-}
+	#downloadsPanel-mainView {
+		.download-state {
+			padding: var(--macos-menu-item-padding) !important;
+			margin: 0 !important;
+			border: var(--macos) !important;
+			border-radius: var(--macos-menu-item-border-radius) !important;
+			display: flex;
+			align-items: center;
+			&:hover {
+				color: var(--macos-menu-item-hover-color) !important;
+				background-color: var(--macos-menu-item-hover) !important;
+			}
+			.downloadButton .button-box {
+				padding: 0 !important;
+				margin: 0 !important;
+			}
+			toolbarseparator {
+				display: none;
+			}
+		}
+		.downloadMainArea {
+			flex: 1;
+			display: flex;
+			&:hover {
+				background: transparent !important;
+			}
+		}
+		.downloadTypeIcon {
+			margin: 0 !important;
+			margin-right: 6px !important;
+		}
+		.downloadContainer {
+			margin-inline-end: 0 !important;
+			flex: 1;
+			display: flex;
+			flex-direction: column;
+		}
+	}
 
-#downloadsPanel-mainView .download-state {
-	padding: var(--macos-menu-item-padding) !important;
-	margin: 0 !important;
-	border: var(--macos) !important;
-	border-radius: var(--macos-menu-item-border-radius) !important;
-	display: flex;
-	align-items: center;
-}
-
-#downloadsPanel-mainView .download-state:hover {
-	color: var(--macos-menu-item-hover-color) !important;
-	background-color: var(--macos-menu-item-hover) !important;
-}
-
-#downloadsPanel-mainView .downloadMainArea {
-	flex: 1;
-	display: flex;
-}
-
-#downloadsPanel-mainView .downloadMainArea:hover {
-	background: transparent !important;
-}
-
-#downloadsPanel-mainView .downloadTypeIcon {
-	margin: 0 !important;
-	margin-right: 6px !important;
-}
-
-#downloadsPanel-mainView .downloadContainer {
-	margin-inline-end: 0 !important;
-	flex: 1;
-	display: flex;
-	flex-direction: column;
-}
-
-#downloadsPanel-mainView .download-state .downloadButton .button-box {
-	padding: 0 !important;
-	margin: 0 !important;
-}
-
-#downloadsPanel-mainView .download-state toolbarseparator {
-	display: none;
-}
-
-#emptyDownloads {
-	padding: 1.5em 8px !important;
+	#emptyDownloads {
+		padding: 1.5em 8px !important;
+	}
 }
 
 /* Customization overflow menu position */
-
 #customization-panel-container {
-	padding: 0 75px 25px !important;
-	margin-top: 10px;
-	z-index: 10;
+	padding: 0 20px 25px !important;
+	margin-top: -20px !important;
+	z-index: 100 !important;
 }
 
 #customization-panelWrapper > .panel-arrowbox {
-	margin-bottom: 0px !important;
+	display: none !important;
 }
 
 #customization-container {
@@ -163,20 +156,16 @@
 	background-image: none !important;
 }
 
-#customization-panelWrapper > .panel-arrowcontent {
-	background: var(--macos-menu-background) !important;
-}
-
 /* Confirmation Hint */
-
-#confirmation-hint .panel-arrowcontent {
-	background: var(--macos-button-suggested-action-background) !important;
-	border-color: var(--macos-button-suggested-action-border-color) !important;
-}
-
-#confirmation-hint .panel-arrow {
-	fill: var(--macos-button-suggested-action-border-color) !important;
-	stroke: var(--macos-button-suggested-action-border-color) !important;
+#confirmation-hint {
+	.panel-arrowcontent {
+		background: var(--macos-button-suggested-action-background) !important;
+		border-color: var(--macos-button-suggested-action-border-color) !important;
+	}
+	.panel-arrow {
+		fill: var(--macos-button-suggested-action-border-color) !important;
+		stroke: var(--macos-button-suggested-action-border-color) !important;
+	}
 }
 
 #confirmation-hint-message {
@@ -184,7 +173,6 @@
 }
 
 /* Identity popup */
-
 #identity-popup-security,
 .identity-popup-section,
 #identity-popup-security-expander .button-box,
@@ -207,10 +195,9 @@
 .identity-popup-security-content {
 	background-position: 0em 0.8em !important;
 	background-size: 24px auto;
-}
-
-.identity-popup-security-content .identity-popup-headline {
-	margin-left: 1.4em !important;
+	.identity-popup-headline {
+		margin-left: 1.4em !important;
+	}
 }
 
 #identity-popup-content-blocking-category-list,
@@ -219,13 +206,11 @@
 }
 
 .identity-popup-security-connection {
-	/* FF70 */
 	background-position: 0 50% !important;
 	padding-inline-start: 16px !important;
 }
 
 #identity-popup-security-description {
-	/* FF70 */
 	padding-inline-start: 0 !important;
 }
 
@@ -244,18 +229,13 @@
 
 #identity-popup-permissions-content {
 	padding-right: 0 !important;
-}
-
-#identity-popup-permissions-content description {
-	margin-inline-start: 0 !important;
-}
-
-#identity-popup-permissions-content {
 	padding-bottom: 10px !important;
+	description {
+		margin-inline-start: 0 !important;
+	}
 }
 
 /* TODO: create custom --macos-list vars */
-
 #identity-popup-permission-list:not(:empty) {
 	border: 1px solid var(--macos-button-border-color);
 	border-bottom: 0 !important;
@@ -270,7 +250,6 @@
 }
 
 /* Protections popup */
-
 .protections-popup-section,
 #protections-popup-not-blocking-section-header {
 	border: 0 !important;
@@ -282,15 +261,17 @@
 	border-radius: 0 !important;
 }
 
-#protections-popup[hasException] #protections-popup-tp-switch-section {
-	margin-bottom: 10px !important;
-	color: white !important;
-}
-
-#protections-popup[hasException] #protections-popup-tp-switch-section,
-#protections-popup[hasException] #protections-popup-mainView-panel-header {
-	background: var(--macos-button-destructive-action-background) !important;
-	border-color: var(--macos-button-destructive-action-border-color) !important;
+#protections-popup[hasException] {
+	#protections-popup-tp-switch-section {
+		margin-bottom: 10px !important;
+		color: white !important;
+		background: var(--macos-button-destructive-action-background) !important;
+		border-color: var(--macos-button-destructive-action-border-color) !important;
+	}
+	#protections-popup-mainView-panel-header {
+		background: var(--macos-button-destructive-action-background) !important;
+		border-color: var(--macos-button-destructive-action-border-color) !important;
+	}
 }
 
 #protections-popup-no-trackers-found-description {
@@ -322,16 +303,16 @@
 	padding: 0 !important;
 }
 
-.panel-info-button:hover {
-	background-color: var(--macos-menu-button-hover-background) !important;
+.panel-info-button {
+	&:hover {
+		background-color: var(--macos-menu-button-hover-background) !important;
+	}
+	&:active {
+		background-color: var(--macos-menu-button-active-background) !important;
+	}
 }
 
-.panel-info-button:active {
-	background-color: var(--macos-menu-button-active-background) !important;
-}
-
-/* Fix popup display*/
-
+/* Fix popup display */
 #protections-popup-footer {
 	display: inherit;
 	justify-content: flex-end;
@@ -351,12 +332,11 @@
 	font-size: 13px !important;
 }
 
-#protections-popup-multiView .subviewbutton {
-	margin: 0 !important;
-}
-
-#protections-popup-multiView toolbarbutton {
-	margin: 0 !important;
+#protections-popup-multiView {
+	.subviewbutton,
+	toolbarbutton {
+		margin: 0 !important;
+	}
 }
 
 #customizationui-widget-panel[viewId="PanelUI-profiler"] {
@@ -364,7 +344,6 @@
 }
 
 /* Feature recommendation notification, fix width */
-
 #contextual-feature-recommendation-notification {
 	width: auto !important;
 }

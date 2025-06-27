@@ -72,7 +72,8 @@
 	}
 
 	/* Header bar spacer */
-	toolbarspring {
+	toolbarspring,
+	toolbarpaletteitem[place="toolbar"][id^="wrapper-customizableui-special-spring"] {
 		flex: 1000 1000 !important;
 		max-width: 10000px !important;
 	}
