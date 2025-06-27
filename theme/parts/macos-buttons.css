@@ -179,7 +179,7 @@
 	border-radius: 0 !important;
 	outline: none !important;
 	border: none !important;
-	fill-opacity: 0.6 !important;
+	opacity: 1 !important;
 	background-color: var(--macos-tabbar-tab-background) !important;
 
 	image {
@@ -191,17 +191,41 @@
 		min-width: 16px !important;
 	}
 
+	label {
+		filter: opacity(0.7) !important;
+	}
+
+	&:-moz-window-inactive {
+		image,
+		label {
+			opacity: 0.7 !important;
+		}
+	}
+
+	:root:not([customizing]) &[disabled] {
+		image,
+		label {
+			opacity: 0.5 !important;
+		}
+	}
+
+	:root:not([customizing]) &:-moz-window-inactive[disabled] {
+		image,
+		label {
+			opacity: 0.35 !important;
+		}
+	}
+
+	/* Cursor action */
 	&:not([disabled]) {
 		&:hover,
 		&[open] {
-			fill-opacity: 1 !important;
 			background-color: var(--macos-tabbar-tab-hover-background) !important;
 		}
 
 		&:active,
 		&[open],
 		&[open]:hover {
-			fill-opacity: 1 !important;
 			background: var(--macos-headerbar-button-active-background) !important;
 		}
 	}

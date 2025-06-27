@@ -46,10 +46,12 @@
 #tabbrowser-tabs {
 	&,
 	#tabbrowser-arrowscrollbox {
+		height: 36px !important;
 		padding: 0 !important;
 		margin: 0 !important;
 		min-width: unset !important;
 		min-height: unset !important;
+		border: none !important;
 	}
 }
 
@@ -200,9 +202,8 @@
 .tab-label-container {
 	min-width: 0 !important;
 	max-width: fit-content !important;
-	margin-left: 0 !important;
 	/* Centres tab content horizontally: right */
-	margin-right: auto !important;
+	margin-right: 0 auto !important;
 
 	&:not([selected], [multiselected]) {
 		opacity: 0.5 !important;
@@ -315,35 +316,10 @@
 	}
 }
 
-/* Fix too many tabs scrollbox height increasing with pinned tabs #39 */
-#tabbrowser-tabs,
-#tabbrowser-tabs arrowscrollbox {
-	height: 36px !important;
-}
-
-/* Fix proton padding with moving tab (dragging) #45 */
-#tabbrowser-tabs[movingtab] {
-	padding-bottom: 0 !important;
-	margin-bottom: 0 !important;
-}
-
-/* Firefox v89 beta tab fix */
-.tab-background {
-	border-radius: 0 !important;
-	margin-block: 0 !important;
-	box-shadow: none !important;
-}
-
-/*Align personal bookmarks v89 */
-#personal-bookmarks {
-	align-content: center !important;
-}
-
-/* transition fade on hover to emulate safari & top border of tab content */
-.tabbrowser-tab > .tab-stack > .tab-background:not([selected]),
-#TabsToolbar-customization-target > toolbarbutton.toolbarbutton-1 {
+/* Tabs bar border */
+.tabbrowser-tab .tab-background:not([selected]),
+#TabsToolbar-customization-target .toolbarbutton-1 {
 	border-top: 1px solid var(--macos-headerbar-border-color) !important;
-	transition: background-color 80ms !important;
 }
 
 /* Tabs View dropdown menu */
