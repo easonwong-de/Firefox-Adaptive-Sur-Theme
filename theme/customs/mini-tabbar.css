@@ -44,19 +44,24 @@ scrollbox[orient="horizontal"] > slot {
 	flex-wrap: wrap !important;
 }
 
+#scrollbutton-up,
+#scrollbutton-down {
+	display: none !important;
+}
+
 /* Tabs bar height */
 #tabbrowser-tabs {
 	&,
 	#tabbrowser-arrowscrollbox,
-	.tabbrowser-tab,
 	.tab-stack {
-		height: var(--macos-mini-tabbar-height) !important;
-		min-height: unset !important;
+		height: unset !important;
+		min-height: var(--macos-mini-tabbar-height) !important;
 	}
 }
 
 .tabbrowser-tab:not([pinned]) {
 	flex: 0 auto !important;
+	height: var(--macos-mini-tabbar-height) !important;
 	min-width: var(--macos-mini-tabbar-min-width) !important;
 	max-width: var(--macos-mini-tabbar-max-width) !important;
 
@@ -109,6 +114,7 @@ scrollbox[orient="horizontal"] > slot {
 /* Small audio button hack */
 .tab-audio-button {
 	--button-size-icon-small: 12px !important;
+	--button-min-height-small: 12px !important;
 	width: 12px !important;
 	height: 12px !important;
 	margin: 0 !important;
