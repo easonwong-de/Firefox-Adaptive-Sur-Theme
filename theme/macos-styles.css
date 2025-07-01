@@ -19,7 +19,7 @@
 	/* Header bar */
 	--macos-headerbar-background: var(--toolbar-bgcolor);
 	--macos-headerbar-color: var(--toolbar-color);
-	--macos-headerbar-border-color: var(--tabs-navbar-separator-color);
+	--macos-headerbar-border-color: var(--chrome-content-separator-color);
 	--macos-headerbar-border-radius: 8px;
 	--macos-headerbar-box-shadow: inset 0 1px #ffffff26;
 	--macos-headerbar-button-size: 32px;
@@ -33,6 +33,7 @@
 	--macos-tabstoolbar-background: var(--lwt-accent-color);
 
 	/* Tabs */
+	--macos-tabbar-border-color: var(--tabs-navbar-separator-color);
 	--macos-tabbar-tab-background: transparent;
 	--macos-tabbar-tab-color: var(--lwt-tab-text, var(--toolbar-color));
 	--macos-tabbar-tab-hover-background: color-mix(in srgb, var(--toolbar-bgcolor) 50%, transparent);
@@ -153,7 +154,7 @@
 		/* Header bar */
 		--macos-headerbar-background: var(--toolbar-bgcolor);
 		--macos-headerbar-color: var(--toolbar-color);
-		--macos-headerbar-border-color: var(--tabs-navbar-separator-color);
+		--macos-tabbar-border-color: var(--tabs-navbar-separator-color);
 		--macos-headerbar-box-shadow: 0 1px #ffffffa6 inset;
 		--macos-headerbar-button-hover-background: var(--toolbarbutton-hover-background);
 		--macos-headerbar-button-active-background: var(--toolbarbutton-active-background);

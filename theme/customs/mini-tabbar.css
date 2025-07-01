@@ -33,6 +33,16 @@
 	}
 }
 
+/* Tab bar top border */
+#TabsToolbar {
+	border-top: 1px solid var(--macos-tabbar-border-color) !important;
+
+	/* Move tab bar content 2px upwards */
+	.toolbar-items {
+		margin-block: -2px 2px !important;
+	}
+}
+
 /* Tab centering */
 #tabbrowser-arrowscrollbox:not([overflowing]) {
 	--tab-centering: center !important;
@@ -59,35 +69,52 @@ scrollbox[orient="horizontal"] > slot {
 	}
 }
 
-.tabbrowser-tab:not([pinned]) {
-	flex: 0 auto !important;
+/* Tabs */
+.tabbrowser-tab {
 	height: var(--macos-mini-tabbar-height) !important;
-	min-width: var(--macos-mini-tabbar-min-width) !important;
-	max-width: var(--macos-mini-tabbar-max-width) !important;
+	min-height: unset !important;
 
-	.tab-close-button {
-		display: none !important;
-	}
-
-	&:hover {
-		.tab-close-button {
-			display: flex !important;
-		}
-
-		.tab-icon-stack {
+	&[pinned] {
+		.tab-label-container {
 			display: none !important;
 		}
 	}
 
-	&:not([style^="max-width"]),
-	&[style^="max-width: 100px !important;"] {
+	&:not([pinned]) {
+		flex: 0 auto !important;
+		min-width: var(--macos-mini-tabbar-min-width) !important;
 		max-width: var(--macos-mini-tabbar-max-width) !important;
+
+		.tab-close-button {
+			display: none !important;
+		}
+
+		&:hover {
+			.tab-close-button {
+				display: flex !important;
+			}
+
+			.tab-icon-stack {
+				display: none !important;
+			}
+		}
+
+		&:not([style^="max-width"]),
+		&[style^="max-width: 100px !important;"] {
+			max-width: var(--macos-mini-tabbar-max-width) !important;
+		}
 	}
+}
+
+/* Fix tabs height */
+.tabbrowser-tab .tab-background:not([selected]),
+#TabsToolbar-customization-target .toolbarbutton-1 {
+	border-top: none !important;
 }
 
 .tab-background {
 	transition: none !important;
-	border-radius: 4px !important;
+	border-radius: 6px !important;
 	border: 0 !important;
 	margin: 2px !important;
 	min-height: unset !important;
