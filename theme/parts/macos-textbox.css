@@ -49,6 +49,7 @@ input[type="text"] {
 }
 
 .urlbar-input-container {
+	width: var(--urlbar-width) !important;
 	height: var(--macos-headerbar-content-height) !important;
 	border-radius: var(--macos-headerbar-border-radius) !important;
 }
