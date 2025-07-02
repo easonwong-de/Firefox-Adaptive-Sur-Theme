@@ -18,7 +18,7 @@
 		}
 	}
 
-	/* Clears pre-defined margins & paddings */
+	/* Clears pre-defined values */
 	#nav-bar-customization-target,
 	toolbarbutton,
 	toolbaritem {
@@ -27,28 +27,29 @@
 		background-color: transparent !important;
 	}
 
-	/* Header bar buttons */
+	/* Header bar buttons appearance */
 	& > toolbarbutton,
 	& > toolbaritem toolbarbutton,
 	#nav-bar-customization-target > toolbarbutton,
 	#nav-bar-customization-target > toolbaritem:not(#urlbar-container):not(#search-container) toolbarbutton,
+	/* During toolbar customisation */
 	#nav-bar-customization-target > toolbarpaletteitem > toolbarbutton,
 	#nav-bar-customization-target
 		> toolbarpaletteitem
 		> toolbaritem:not(#urlbar-container):not(#search-container)
 		toolbarbutton {
+		margin-inline: 2px !important;
 		outline: none !important;
 		border: none !important;
-		margin-inline: 2px !important;
 		box-shadow: none !important;
 		background-color: transparent !important;
-		border-radius: var(--macos-menu-border-radius) !important;
-		height: var(--macos-headerbar-button-size) !important;
-		width: var(--macos-headerbar-button-size) !important;
+		border-radius: var(--macos-headerbar-border-radius) !important;
+		height: var(--macos-headerbar-content-height) !important;
+		width: var(--macos-headerbar-content-height) !important;
 		color: var(--macos-headerbar-color) !important;
 	}
 
-	/* :hover & :active */
+	/* Header bar buttons :hover & :active */
 	& > toolbarbutton,
 	& > toolbaritem toolbarbutton,
 	#nav-bar-customization-target > toolbarbutton,
@@ -74,7 +75,22 @@
 	/* Header bar spacer */
 	toolbarspring,
 	toolbarpaletteitem[place="toolbar"][id^="wrapper-customizableui-special-spring"] {
-		flex: 1000 1000 !important;
+		flex: 500 500 !important;
 		max-width: 10000px !important;
+	}
+
+	/* Header bar URL bar & search bar dimensions */
+	#nav-bar-customization-target > toolbaritem:is(#urlbar-container, #search-container),
+	/* During toolbar customisation */
+	#nav-bar-customization-target
+		> toolbarpaletteitem
+		> toolbaritem:is(#urlbar-container, #search-container) {
+		outline: none !important;
+		border: none !important;
+		box-shadow: none !important;
+		background-color: transparent !important;
+		padding: 0 !important;
+		margin: 0 2px !important;
+		height: var(--macos-headerbar-content-height) !important;
 	}
 }

@@ -22,7 +22,7 @@
 	--macos-headerbar-border-color: var(--chrome-content-separator-color);
 	--macos-headerbar-border-radius: 8px;
 	--macos-headerbar-box-shadow: inset 0 1px #ffffff26;
-	--macos-headerbar-button-size: 32px;
+	--macos-headerbar-content-height: 32px;
 	--macos-headerbar-button-hover-background: var(--toolbarbutton-hover-background);
 	--macos-headerbar-button-active-background: var(--toolbarbutton-active-background);
 	--macos-inactive-headerbar-background: var(--toolbar-bgcolor);
@@ -56,15 +56,15 @@
 	--macos-urlbar-background: var(--toolbar-field-background-color);
 	--macos-urlbar-focus-background: var(--toolbar-field-focus-background-color);
 	--macos-urlbar-border-color: var(--toolbar-field-border-color);
-	--macos-urlbar-box-shadow: inset 0 0 0 1px #15539e00;
+	--macos-urlbar-box-shadow: inset 0 0 0 1px var(--macos-urlbar-border-color);
 	--macos-urlbar-color: var(--toolbar-field-color);
 	--macos-hover-urlbar-border-color: var(--toolbar-field-border-color);
 	--macos-inactive-urlbar-background: var(--toolbar-field-background-color);
 	--macos-inactive-urlbar-border-color: var(--toolbar-field-border-color);
 	--macos-inactive-urlbar-box-shadow: none;
 	--macos-inactive-urlbar-color: var(--toolbar-field-color);
-	--macos-focused-urlbar-border-color: #338cbe;
-	--macos-focused-urlbar-highlight-color: #006ea0;
+	--macos-focused-urlbar-border-color: #338bbecc;
+	--macos-focused-urlbar-highlight-color: #006ea0cc;
 	--macos-private-urlbar-background: var(--toolbar-field-background-color);
 	--urlbar-icon-border-radius: var(--macos-headerbar-border-radius) !important;
 
@@ -196,8 +196,8 @@
 		--macos-inactive-urlbar-border-color: var(--toolbar-field-border-color);
 		--macos-inactive-urlbar-box-shadow: 0 3px 5px #0000000d;
 		--macos-inactive-urlbar-color: var(--toolbar-field-color);
-		--macos-focused-urlbar-border-color: #5683da;
-		--macos-focused-urlbar-highlight-color: #6592e9;
+		--macos-focused-urlbar-border-color: #5683dacc;
+		--macos-focused-urlbar-highlight-color: #6592e9cc;
 		--macos-private-urlbar-background: var(--toolbar-field-background-color);
 		--urlbar-icon-border-radius: var(--macos-headerbar-border-radius) !important;
 

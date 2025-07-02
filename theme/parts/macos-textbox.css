@@ -1,0 +1,87 @@
+/* Search bar, URL bar, find bar */
+
+@namespace xul "http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul";
+
+/* Text colour */
+#searchbar,
+#urlbar,
+.findbar-textbox,
+input[type="text"] {
+	color: var(--macos-urlbar-color) !important;
+
+	:-moz-window-inactive {
+		color: var(--macos-inactive-urlbar-color) !important;
+	}
+}
+
+/* Clears pre-defined values */
+.searchbar-textbox,
+#urlbar {
+	margin: 0 !important;
+	padding: 0 !important;
+	border: none !important;
+	outline: none !important;
+	box-shadow: none !important;
+	color: inherit !important;
+	background-color: transparent !important;
+}
+
+/* Removes useless background */
+#urlbar-background {
+	display: none !important;
+}
+
+/* URL bar, search bar, find bar: outter appearance */
+#searchbar,
+.urlbar-input-container,
+.findbar-textbox,
+input[type="text"] {
+	border: none !important;
+	box-shadow: var(--macos-urlbar-box-shadow) !important;
+	background-color: var(--macos-urlbar-background) !important;
+	padding: 2px 6px !important;
+	transition: none !important;
+}
+
+#searchbar {
+	height: 100% !important;
+	border-radius: var(--macos-headerbar-border-radius) !important;
+}
+
+.urlbar-input-container {
+	height: var(--macos-headerbar-content-height) !important;
+	border-radius: var(--macos-headerbar-border-radius) !important;
+}
+
+.findbar-textbox {
+	height: 22px !important;
+	border-radius: 6px !important;
+}
+
+/* Outline: textbox not focused */
+#urlbar .urlbar-input-container,
+#searchbar,
+.findbar-textbox,
+input[type="text"] {
+	outline-offset: -1px !important;
+	outline-style: solid !important;
+	outline-color: transparent !important;
+	outline-width: 24px !important;
+	transition: none !important;
+}
+
+/* Outline: textbox focused */
+#urlbar[focused] .urlbar-input-container,
+#searchbar:focus-within,
+.findbar-textbox:focus,
+input[type="text"]:focus-visible {
+	outline-color: var(--macos-focused-urlbar-border-color) !important;
+	outline-width: 4px !important;
+	transition: outline-color 0.5s cubic-bezier(0, 1, 0.1, 1), outline-width 0.5s cubic-bezier(0, 1, 0.1, 1) !important;
+}
+
+/* Cursor not focused */
+#urlbar:not([focused]) *,
+#searchbar:not(:focus-within) * {
+	cursor: default !important;
+}

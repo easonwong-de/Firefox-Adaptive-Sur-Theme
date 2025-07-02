@@ -1,81 +1,9 @@
-/* URL bar & search bar */
+/* URL bar badges & buttons, URL bar dropdown menu */
 
 @namespace xul "http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul";
 
-/* Headerbar entries */
-#searchbar,
-#urlbar .urlbar-input-container {
-	appearance: none;
-	-moz-appearance: none !important;
-	background: var(--macos-urlbar-background) !important;
-	border: none !important;
-	box-shadow: inset 0 0 0 1px var(--macos-hover-urlbar-border-color) !important;
-	border-radius: var(--macos-headerbar-border-radius) !important;
-	color: var(--macos-urlbar-color) !important;
-	padding: 0 6px !important;
-	height: 32px !important;
-	max-height: 32px !important;
-}
-
-#urlbar {
-	box-shadow: none !important;
-	--urlbar-height: 30px !important;
-	--urlbar-toolbar-height: 30px !important;
-
-	#urlbar-background {
-		outline: none !important;
-		box-shadow: none !important;
-		border: 0 !important;
-		background: transparent !important;
-		border-radius: var(--macos-headerbar-border-radius) !important;
-	}
-
-	&[breakout][breakout-extend] {
-		width: var(--urlbar-width) !important;
-		z-index: 5 !important;
-		padding: 0 !important;
-
-		&[open] {
-			height: auto !important;
-			max-height: unset !important;
-
-			#urlbar-background {
-				box-shadow: var(--macos-urlbar-box-shadow) !important;
-			}
-		}
-
-		.urlbar-input-container {
-			height: 32px !important;
-			max-height: 32px !important;
-			background: var(--macos-urlbar-focus-background) !important;
-			box-shadow: none !important;
-			padding: 0 6px !important;
-
-			&:hover {
-				box-shadow: none !important;
-				padding: 0 6px !important;
-			}
-		}
-	}
-
-	&:not([focused]) #urlbar-input {
-		mask-image: linear-gradient(to left, transparent, black 3ch);
-	}
-
-	#page-action-buttons {
-		filter: saturate(0%) brightness(120%) !important;
-	}
-}
-
 #urlbar-customization-target {
 	max-height: 36px !important;
-}
-
-#searchbar:focus-within,
-#urlbar[focused] .urlbar-input-container {
-	border: none !important;
-	background: var(--macos-urlbar-background) !important;
-	box-shadow: inset 0 0 0 2px var(--macos-focused-urlbar-highlight-color) !important;
 }
 
 /* Badge and buttons on the left */
@@ -156,13 +84,18 @@
 		width: 100%;
 		text-align: left !important;
 	}
+
+	/* Text fading effect */
+	#urlbarnot:not([focused]) & {
+		mask-image: linear-gradient(to left, transparent, black 3ch);
+	}
 }
 
-/* URL bar results */
+/* URL bar popup */
 .urlbarView {
 	width: 100% !important;
 	padding: 4px !important;
-	margin: 0 !important;
+	margin: 4px 0 !important;
 	border-radius: var(--macos-menu-border-radius) !important;
 	background: var(--macos-menu-background) !important;
 	border: var(--macos-menu-border) !important;
@@ -322,8 +255,6 @@
 }
 
 .searchbar-engine-one-off-item {
-	appearance: none;
-	-moz-appearance: none !important;
 	--toolbarbutton-active-background: transparent !important;
 	--toolbarbutton-hover-background: transparent !important;
 	background: var(--macos-button-background) !important;
@@ -397,36 +328,6 @@
 	margin: auto !important;
 }
 
-/* Fix for firefox v92 onwards that changed icon size on MacOS */
-.urlbar-page-action {
-	padding: inherit !important;
-}
-
-#urlbar-container,
-#search-container {
-	padding: 0 !important;
-	margin: 0 3px !important;
-}
-
-.urlbar-input-container {
-	background: transparent !important;
-	border: 0 !important;
-}
-
-#urlbar,
-#searchbar {
-	margin: 0 3px !important;
-	padding: 0 !important;
-	color: initial !important;
-}
-
-.searchbar-textbox {
-	border: 0 !important;
-	padding: 0 !important;
-	margin: 0 !important;
-	min-height: auto !important;
-}
-
-#searchbar > .searchbar-textbox[focused] .searchbar-search-button:not(#hack) {
-	margin: 0 !important;
+#page-action-buttons {
+	filter: saturate(0%) brightness(120%) !important;
 }

@@ -2,10 +2,10 @@
 @import "theme/parts/macos-buttons.css";
 @import "theme/parts/macos-csd.css";
 @import "theme/parts/macos-custom-icons.css";
-@import "theme/parts/macos-entries.css";
+@import "theme/parts/macos-textbox.css";
 @import "theme/parts/macos-findbar.css";
 @import "theme/parts/macos-private-urlbar.css";
-@import "theme/parts/macos-urlbar.css";
+@import "theme/parts/macos-urlbar-contents.css";
 @import "theme/parts/macos-headerbar.css";
 @import "theme/parts/macos-icons.css";
 @import "theme/parts/macos-popups-contents.css";
