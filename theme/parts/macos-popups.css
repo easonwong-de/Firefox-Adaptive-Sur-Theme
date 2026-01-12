@@ -42,6 +42,7 @@ menupopup {
 		appearance: none;
 		-moz-appearance: none !important;
 		padding: var(--macos-menu-item-padding) !important;
+		margin: var(--macos-menu-item-margin) !important;
 		min-height: unset !important;
 	}
 
@@ -53,8 +54,12 @@ menupopup {
 	> menuitem:where([_moz-menuactive="true"]:not([disabled="true"])) {
 		color: var(--macos-menu-item-hover-color) !important;
 		background-color: var(--macos-menu-item-hover) !important;
-		--macos-headerbar-button-hover-background: var(--macos-menu-item-hover) !important;
-		--macos-headerbar-button-active-background: var(--macos-menu-item-hover) !important;
+		--macos-headerbar-button-hover-background: var(
+			--macos-menu-item-hover
+		) !important;
+		--macos-headerbar-button-active-background: var(
+			--macos-menu-item-hover
+		) !important;
 	}
 
 	> menuitem:active,
@@ -93,7 +98,7 @@ menupopup menu[disabled="true"]:hover {
 #customizationui-widget-multiview #appMenu-libraryView,
 #pageActionPanel panelview,
 #widget-overflow panelview {
-	min-width: fit-content !important;
+	min-width: 250px !important;
 	max-width: max-content !important;
 }
 
@@ -116,7 +121,8 @@ panel {
 	}
 
 	&#notification-popup popupnotification,
-	&[type="arrow"].panel-no-padding:not([viewId^="PanelUI-webext"]) > panelmultiview {
+	&[type="arrow"].panel-no-padding:not([viewId^="PanelUI-webext"])
+		> panelmultiview {
 		margin: var(--panel-padding) !important;
 	}
 }
@@ -143,23 +149,8 @@ panel {
 	}
 }
 
-.panel-header {
-	padding: 10px 0 !important;
-}
-
-.panel-footer {
-	background-color: transparent !important;
-	display: flex;
-	justify-content: flex-end;
-	padding: 0 !important;
-	margin: 0 !important;
-
-	toolbarseparator {
-		display: none !important;
-	}
-}
-
-.panel-subview-body {
+.panel-subview-body,
+.PanelUI-subView {
 	padding: 0 !important;
 
 	> *,
@@ -170,7 +161,9 @@ panel {
 	#appMenu_historyMenu > *,
 	#identity-popup-more-info-footer > toolbarbutton,
 	#widget-overflow-mainView > toolbarbutton {
-		margin: 0 !important;
+		&:not(toolbarseparator, menuseparator) {
+			margin: 0 !important;
+		}
 	}
 }
 
@@ -192,7 +185,9 @@ panel {
 }
 
 .all-tabs-item,
-.subviewbutton:not(.subviewbutton-back):not(.toolbarbutton-1):not(.all-tabs-button):not(.all-tabs-close-button),
+.subviewbutton:not(.subviewbutton-back):not(.toolbarbutton-1):not(
+		.all-tabs-button
+	):not(.all-tabs-close-button),
 .protections-popup-category,
 .identity-popup-content-blocking-category {
 	padding: var(--macos-menu-item-padding) !important;
@@ -212,49 +207,48 @@ panel {
 .toolbarbutton-1[disabled],
 .identity-popup-content-blocking-category[disabled] {
 	opacity: 0.5 !important;
-	color: var(--macos-inactive-headerbar-color) !important;
 	background: none !important;
+	color: var(--macos-inactive-headerbar-color) !important;
 }
 
 .subviewbutton[shortcut]:after {
 	opacity: 0.5 !important;
 }
 
-/* Popover items on hover */
-.bookmark-item:hover,
-.bookmark-item:hover:active,
-#nav-bar .panel-subview-body toolbarbutton:hover,
-#nav-bar .panel-subview-body toolbarbutton:hover:active,
-.panel-subview-body .toolbarbutton-1:not(.subviewbutton):hover,
-.panel-subview-body .toolbarbutton-1:not(.subviewbutton):hover:active,
-.subviewbutton.identity-popup-security-connection:hover,
-.subviewbutton.identity-popup-security-connection:hover:active,
-.subviewbutton.sendToDevice-device:hover,
-.subviewbutton.sendToDevice-device:hover:active,
-#protections-popup-show-report-stack:hover > .protections-popup-footer-button,
-#protections-popup-show-report-stack:hover:active > .protections-popup-footer-button,
-.subviewbutton:not(.nav-bar-overflow-button):not(#appMenu-fxa-label2):not(.subviewbutton-iconic):not(
+/* Popover items on hover - blue */
+.bookmark-item,
+panelview .toolbarbutton-1,
+toolbarbutton.subviewbutton,
+.protections-popup-footer-button,
+.subviewbutton.sendToDevice-device,
+#nav-bar .panel-subview-body toolbarbutton,
+.subviewbutton.identity-popup-security-connection,
+.panel-subview-body .toolbarbutton-1:not(.subviewbutton),
+.subviewbutton:not(
+		#appMenu-fxa-label2,
+		.nav-bar-overflow-button,
+		.subviewbutton-iconic,
 		.panel-subview-footer-button
-	):hover,
-.subviewbutton:not(.nav-bar-overflow-button):not(#appMenu-fxa-label2):not(.subviewbutton-iconic):not(
-		.panel-subview-footer-button
-	):hover:active {
-	color: var(--macos-menu-item-hover-color) !important;
-	background-color: var(--macos-menu-item-hover) !important;
-	--macos-headerbar-button-hover-background: var(--macos-menu-item-hover) !important;
-	--macos-headerbar-button-active-background: var(--macos-menu-item-hover) !important;
-}
+	) {
+	&:hover {
+		color: var(--macos-menu-item-hover-color) !important;
+		background-color: var(--macos-menu-item-hover) !important;
+		--macos-headerbar-button-hover-background: var(
+			--macos-menu-item-hover
+		) !important;
+		--macos-headerbar-button-active-background: var(
+			--macos-menu-item-hover
+		) !important;
 
-.bookmark-item:active,
-#nav-bar .panel-subview-body toolbarbutton:active,
-.panel-subview-body .toolbarbutton-1:not(.subviewbutton):active,
-.subviewbutton.sendToDevice-device:active,
-#protections-popup-show-report-stack:active > .protections-popup-footer-button,
-.subviewbutton:not(.nav-bar-overflow-button):not(#appMenu-fxa-label2):not(.subviewbutton-iconic):not(
-		.panel-subview-footer-button
-	):active {
-	background-color: transparent !important;
-	--macos-headerbar-button-active-background: transparent !important;
+		&:active {
+			background-color: transparent !important;
+			--macos-headerbar-button-active-background: transparent !important;
+		}
+	}
+
+	&[disabled] {
+		opacity: 0.5 !important;
+	}
 }
 
 /* Right click menu */
@@ -287,22 +281,18 @@ panel {
 /* Style popover separators */
 toolbarseparator,
 menuseparator {
-	border-color: var(--macos-menu-separator-color) !important;
-}
-
-toolbarseparator:not([orient="vertical"]),
-menuseparator {
+	padding: 0 !important;
 	margin: 6px 8px !important;
-	border-top: 1px solid currentColor !important;
-	opacity: 0.2;
-}
+	border-top: 1px solid var(--macos-menu-separator-color) !important;
+	opacity: 0.4 !important;
 
-menuseparator::before {
-	content: none !important;
-}
+	&[orient="vertical"] {
+		margin: 0 3px !important;
+	}
 
-toolbarseparator[orient="vertical"] {
-	margin: 0 3px !important;
+	&::before {
+		content: none !important;
+	}
 }
 
 #contentAreaContextMenu menuitem image,
@@ -394,7 +384,9 @@ menuseparator {
 }
 
 xul|button:not([disabled="true"]):hover {
-	background-color: var(--macos-button-active-background-alt-hover) !important;
+	background-color: var(
+		--macos-button-active-background-alt-hover
+	) !important;
 	border: 1px solid var(--macos-button-active-background-alt-border);
 	border-color: var(--macos-button-active-border-color) !important;
 	color: var(--macos-button-menulist-color) !important;
@@ -402,13 +394,17 @@ xul|button:not([disabled="true"]):hover {
 
 /* Quit or primary button */
 xul|button[default] {
-	background-color: var(--macos-button-suggested-action-background) !important;
+	background-color: var(
+		--macos-button-suggested-action-background
+	) !important;
 	border-color: var(--macos-button-suggested-action-border-color) !important;
 	color: var(--macos-button-menulist-color) !important;
 }
 
 xul|button[default]:not([disabled="true"]):hover {
-	background-color: var(--macos-button-suggested-action-hover-background) !important;
+	background-color: var(
+		--macos-button-suggested-action-hover-background
+	) !important;
 	border-color: var(--macos-button-suggested-action-border-color) !important;
 	color: var(--macos-button-menulist-color) !important;
 }
@@ -544,3 +540,5 @@ browser[primary="true"][tabDialogShowing="true"],
 #tab-preview-panel {
 	--panel-padding: 0 !important;
 }
+
+/* Translation panel */

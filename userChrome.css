@@ -36,6 +36,6 @@
 /* Set theme version text in customization panel */
 
 #customization-footer::before {
-	content: "Firefox Adaptive Sur Theme v2.0";
+	content: "Firefox Adaptive Sur Theme v2.1";
 	padding: 9px;
 }

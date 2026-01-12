@@ -31,7 +31,7 @@ input[type="text"] {
 }
 
 /* Removes useless background */
-#urlbar-background {
+.urlbar-background {
 	display: none !important;
 }
 
@@ -81,7 +81,8 @@ input[type="text"] {
 input[type="text"]:focus-visible {
 	outline-color: var(--macos-focused-urlbar-border-color) !important;
 	outline-width: 4px !important;
-	transition: outline-color 0.5s cubic-bezier(0, 1, 0.1, 1), outline-width 0.5s cubic-bezier(0, 1, 0.1, 1) !important;
+	transition: outline-color 0.5s cubic-bezier(0, 1, 0.1, 1),
+		outline-width 0.5s cubic-bezier(0, 1, 0.1, 1) !important;
 }
 
 /* Cursor not focused */
