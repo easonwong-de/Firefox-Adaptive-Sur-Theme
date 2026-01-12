@@ -241,8 +241,10 @@ toolbarbutton.subviewbutton,
 		) !important;
 
 		&:active {
-			background-color: transparent !important;
-			--macos-headerbar-button-active-background: transparent !important;
+			background-color: var(--macos-menu-item-hover) !important;
+			--macos-headerbar-button-active-background: var(
+				--macos-menu-item-hover
+			) !important;
 		}
 	}
 
