@@ -5,7 +5,9 @@
 	--macos-mini-tabbar-min-width: 60px;
 	--macos-mini-tabbar-max-width: 280px;
 
-	--macos-tabbar-tab-background: var(--macos-tabstoolbar-background) !important;
+	--macos-tabbar-tab-background: var(
+		--macos-tabstoolbar-background
+	) !important;
 	--macos-tabbar-tab-active-background: color-mix(
 		in srgb,
 		var(--macos-tabstoolbar-background) 90%,
@@ -16,8 +18,12 @@
 		var(--macos-tabstoolbar-background) 95%,
 		currentColor
 	) !important;
-	--macos-inactive-tabbar-tab-active-background: var(--macos-tabbar-tab-active-background) !important;
-	--macos-hover-urlbar-border-color: var(--macos-tabbar-tab-active-background) !important;
+	--macos-inactive-tabbar-tab-active-background: var(
+		--macos-tabbar-tab-active-background
+	) !important;
+	--macos-hover-urlbar-border-color: var(
+		--macos-tabbar-tab-active-background
+	) !important;
 
 	@media (prefers-color-scheme: light) {
 		--macos-tabbar-tab-active-background: color-mix(
@@ -146,7 +152,7 @@ scrollbox[orient="horizontal"] > slot {
 	height: 12px !important;
 	margin: 0 !important;
 	height: 100% !important;
-	padding-top: 2px !important;
+	padding: 0 !important;
 }
 
 .tab-label {

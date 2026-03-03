@@ -2,11 +2,12 @@
 
 @namespace xul "http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul";
 
-/* Text colour */
+/* Text style */
 #searchbar,
 #urlbar,
 .findbar-textbox,
 input[type="text"] {
+	font: menu !important;
 	color: var(--macos-urlbar-color) !important;
 
 	:-moz-window-inactive {
