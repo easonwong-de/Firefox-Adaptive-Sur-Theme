@@ -6,53 +6,52 @@
 	max-height: 36px !important;
 }
 
-/* Badge on the left */
+/* Flatterns combined icons */
+#identity-box,
+#page-action-buttons {
+	display: contents !important;
+}
+
+/* Badge boxes */
 .urlbar-input-container {
-	#identity-box,
-	#urlbar-label-box,
-	#tracking-protection-icon-container,
-	toolbarbutton#urlbar-searchmode-switcher,
-	.searchmode-switcher-chicklet {
+	& > box,
+	& > #urlbar-searchmode-switcher,
+	& > #page-action-buttons > hbox,
+	& > #identity-box > box {
+		background-color: transparent !important;
+		opacity: 0.7 !important;
 		margin: 0 !important;
 		padding: 6px !important;
+		font-size: 85% !important;
 
-		#identity-icon,
-		.searchmode-switcher-icon,
-		#tracking-protection-icon-box,
-		#tracking-protection-icon {
-			width: 16px !important;
-			height: 16px !important;
-		}
-
-		#identity-icon-label,
-		.searchmode-switcher-title {
-			font-size: 0.75em !important;
-		}
-	}
-
-	/* Background colour */
-	.identity-box-button,
-	.notification-anchor-icon,
-	toolbarbutton#urlbar-searchmode-switcher,
-	.searchmode-switcher-chicklet,
-	#tracking-protection-icon-container {
-		&:not([open="true"]) {
-			opacity: 0.7 !important;
-			background-color: transparent !important;
-		}
+		&[open="true"],
+		&:hover:active,
 		&:hover:not([open="true"]) {
 			opacity: 1 !important;
 			background-color: transparent !important;
 		}
-		&:hover:active,
-		&[open="true"] {
-			opacity: 1 !important;
-			background-color: transparent !important;
+
+		image {
+			width: 16px !important;
+			height: 16px !important;
 		}
 	}
 
-	#identity-icon-box {
+	/* Special case: "Go" button is a single <img> */
+	.urlbar-icon.urlbar-go-button {
+		background-color: transparent !important;
+		opacity: 0.7 !important;
+		margin: 6px !important;
 		padding: 0 !important;
+		width: 16px !important;
+		height: 16px !important;
+
+		&[open="true"],
+		&:hover:active,
+		&:hover:not([open="true"]) {
+			opacity: 1 !important;
+			background-color: transparent !important;
+		}
 	}
 }
 

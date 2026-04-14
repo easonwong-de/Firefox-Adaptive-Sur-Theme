@@ -225,11 +225,11 @@ toolbarbutton.subviewbutton,
 .subviewbutton.identity-popup-security-connection,
 .panel-subview-body .toolbarbutton-1:not(.subviewbutton),
 .subviewbutton:not(
-		#appMenu-fxa-label2,
-		.nav-bar-overflow-button,
-		.subviewbutton-iconic,
-		.panel-subview-footer-button
-	) {
+	#appMenu-fxa-label2,
+	.nav-bar-overflow-button,
+	.subviewbutton-iconic,
+	.panel-subview-footer-button
+) {
 	&:hover {
 		color: var(--macos-menu-item-hover-color) !important;
 		background-color: var(--macos-menu-item-hover) !important;
@@ -249,7 +249,8 @@ toolbarbutton.subviewbutton,
 	}
 
 	&[disabled] {
-		opacity: 0.5 !important;
+		filter: grayscale(1) contrast(0.5) !important;
+		pointer-events: none !important;
 	}
 }
 
