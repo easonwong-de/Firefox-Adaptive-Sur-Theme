@@ -93,8 +93,8 @@ url("about:newtab") {
 
 		.context-menu-button {
 			backdrop-filter: blur(10px) brightness(0.75) saturate(2.5) !important;
-			inset-block-start: 2.5px !important;
-			inset-inline-end: 12.5px !important;
+			inset-block-start: 3px !important;
+			inset-inline-end: -2px !important;
 			border-radius: 50% !important;
 			background-color: var(--context-menu-background) !important;
 		}
@@ -108,7 +108,7 @@ url("about:newtab") {
 		backdrop-filter: blur(25px) !important;
 		inset-block-start: 0 !important;
 		inset-inline-end: unset !important;
-		inset-inline-start: 70px !important;
+		inset-inline-start: 80px !important;
 		outline: var(--context-menu-outline);
 		border: var(--context-menu-border);
 		border-radius: 6px !important;
