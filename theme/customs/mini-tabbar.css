@@ -56,8 +56,8 @@
 
 /* Tabs auto wrap */
 scrollbox[orient="horizontal"] > slot {
-	justify-content: var(--tab-centering, initial) !important;
 	flex-wrap: wrap !important;
+	justify-content: var(--tab-centering, initial) !important;
 }
 
 #scrollbutton-up,
@@ -120,9 +120,9 @@ scrollbox[orient="horizontal"] > slot {
 
 .tab-background {
 	transition: none !important;
-	border-radius: 6px !important;
-	border: 0 !important;
 	margin: 2px !important;
+	border: 0 !important;
+	border-radius: 6px !important;
 	min-height: unset !important;
 }
 
@@ -138,21 +138,21 @@ scrollbox[orient="horizontal"] > slot {
 .tab-throbber-fallback,
 .tab-close-button,
 .tab-sharing-icon-overlay {
-	width: 12px !important;
-	height: 12px !important;
 	margin: 0 !important;
 	border-radius: 2px !important;
+	width: 12px !important;
+	height: 12px !important;
 }
 
 /* Small audio button hack */
 .tab-audio-button {
 	--button-size-icon-small: 12px !important;
 	--button-min-height-small: 12px !important;
+	margin: 0 !important;
+	padding: 0 !important;
 	width: 12px !important;
 	height: 12px !important;
-	margin: 0 !important;
 	height: 100% !important;
-	padding: 0 !important;
 }
 
 .tab-label {
@@ -173,7 +173,11 @@ scrollbox[orient="horizontal"] > slot {
 /* Text overflow effect */
 stack[muted="true"] + .tab-label-container[textoverflow],
 stack[soundplaying="true"] + .tab-label-container[textoverflow] {
-	mask-image: linear-gradient(to left, transparent, black var(--tab-label-mask-size)) !important;
+	mask-image: linear-gradient(
+		to left,
+		transparent,
+		black var(--tab-label-mask-size)
+	) !important;
 }
 
 .tab-throbber::before {

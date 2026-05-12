@@ -38,7 +38,9 @@
 	}
 
 	#appMenu-fxa-status[fxastatus="signedin"] > #appMenu-fxa-label,
-	#appMenu-fxa-container[fxastatus="signedin"] > #appMenu-fxa-status > #appMenu-fxa-label {
+	#appMenu-fxa-container[fxastatus="signedin"]
+		> #appMenu-fxa-status
+		> #appMenu-fxa-label {
 		padding-left: 28px !important;
 	}
 
@@ -56,8 +58,8 @@
 /* Tab view items */
 .all-tabs-button.subviewbutton.subviewbutton-iconic,
 .all-tabs-close-button.all-tabs-secondary-button.subviewbutton {
-	min-height: min-content !important;
 	padding: 0 !important;
+	min-height: min-content !important;
 }
 
 .all-tabs-item {
@@ -71,8 +73,14 @@
 }
 
 #nav-bar {
-	#allTabsMenu-allTabsView .panel-subview-body .all-tabs-item toolbarbutton.all-tabs-close-button,
-	#allTabsMenu-hiddenTabsView-tabs .panel-subview-body .all-tabs-item toolbarbutton.all-tabs-close-button {
+	#allTabsMenu-allTabsView
+		.panel-subview-body
+		.all-tabs-item
+		toolbarbutton.all-tabs-close-button,
+	#allTabsMenu-hiddenTabsView-tabs
+		.panel-subview-body
+		.all-tabs-item
+		toolbarbutton.all-tabs-close-button {
 		&:hover {
 			background-color: var(--macos-button-hover-color) !important;
 		}
@@ -98,27 +106,27 @@
 
 	#downloadsPanel-mainView {
 		.download-state {
-			padding: var(--macos-menu-item-padding) !important;
+			display: flex;
+			align-items: center;
 			margin: 0 !important;
 			border: var(--macos) !important;
 			border-radius: var(--macos-menu-item-border-radius) !important;
-			display: flex;
-			align-items: center;
+			padding: var(--macos-menu-item-padding) !important;
 			&:hover {
-				color: var(--macos-menu-item-hover-color) !important;
 				background-color: var(--macos-menu-item-hover) !important;
+				color: var(--macos-menu-item-hover-color) !important;
 			}
 			.downloadButton .button-box {
-				padding: 0 !important;
 				margin: 0 !important;
+				padding: 0 !important;
 			}
 			toolbarseparator {
 				display: none;
 			}
 		}
 		.downloadMainArea {
-			flex: 1;
 			display: flex;
+			flex: 1;
 			&:hover {
 				background: transparent !important;
 			}
@@ -128,10 +136,10 @@
 			margin-right: 6px !important;
 		}
 		.downloadContainer {
-			margin-inline-end: 0 !important;
-			flex: 1;
 			display: flex;
+			flex: 1;
 			flex-direction: column;
+			margin-inline-end: 0 !important;
 		}
 	}
 
@@ -142,9 +150,9 @@
 
 /* Customization overflow menu position */
 #customization-panel-container {
-	padding: 0 20px 25px !important;
-	margin-top: -20px !important;
 	z-index: 100 !important;
+	margin-top: -20px !important;
+	padding: 0 20px 25px !important;
 }
 
 #customization-panelWrapper > .panel-arrowbox {
@@ -152,15 +160,17 @@
 }
 
 #customization-container {
-	background-color: var(--lwt-accent-color) !important;
 	background-image: none !important;
+	background-color: var(--lwt-accent-color) !important;
 }
 
 /* Confirmation Hint */
 #confirmation-hint {
 	.panel-arrowcontent {
+		border-color: var(
+			--macos-button-suggested-action-border-color
+		) !important;
 		background: var(--macos-button-suggested-action-background) !important;
-		border-color: var(--macos-button-suggested-action-border-color) !important;
 	}
 	.panel-arrow {
 		fill: var(--macos-button-suggested-action-border-color) !important;
@@ -183,8 +193,8 @@
 .identity-popup-security-content,
 #identity-popup-permissions-content,
 #identity-popup-content-blocking-content {
-	padding-inline-end: 0 !important;
 	padding-inline-start: 0 !important;
+	padding-inline-end: 0 !important;
 }
 
 #identity-popup-permissions-content,
@@ -243,10 +253,10 @@
 }
 
 .identity-popup-permission-item {
-	background: var(--macos-menu-background);
-	border-bottom: 1px solid var(--macos-button-border-color);
-	padding: 6px !important;
 	margin: 0 !important;
+	border-bottom: 1px solid var(--macos-button-border-color);
+	background: var(--macos-menu-background);
+	padding: 6px !important;
 }
 
 /* Protections popup */
@@ -256,21 +266,29 @@
 }
 
 #protections-popup-message {
-	height: 100% !important;
 	margin: 0 !important;
 	border-radius: 0 !important;
+	height: 100% !important;
 }
 
 #protections-popup[hasException] {
 	#protections-popup-tp-switch-section {
 		margin-bottom: 10px !important;
+		border-color: var(
+			--macos-button-destructive-action-border-color
+		) !important;
+		background: var(
+			--macos-button-destructive-action-background
+		) !important;
 		color: white !important;
-		background: var(--macos-button-destructive-action-background) !important;
-		border-color: var(--macos-button-destructive-action-border-color) !important;
 	}
 	#protections-popup-mainView-panel-header {
-		background: var(--macos-button-destructive-action-background) !important;
-		border-color: var(--macos-button-destructive-action-border-color) !important;
+		border-color: var(
+			--macos-button-destructive-action-border-color
+		) !important;
+		background: var(
+			--macos-button-destructive-action-background
+		) !important;
 	}
 }
 
@@ -281,8 +299,8 @@
 #protections-popup-blocking-section-header,
 #protections-popup-not-found-section-header,
 #protections-popup-not-blocking-section-header {
-	padding: 0px 5px !important;
 	margin-top: 20px !important;
+	padding: 0px 5px !important;
 	height: auto !important;
 }
 
@@ -315,8 +333,8 @@
 /* Fix popup display */
 #protections-popup-footer {
 	display: inherit;
-	justify-content: flex-end;
 	flex-wrap: wrap;
+	justify-content: flex-end;
 }
 
 #protections-popup-show-report-stack {
@@ -324,11 +342,11 @@
 }
 
 #protections-popup-trackers-blocked-counter-box {
-	padding: 0 !important;
-	margin: 0 !important;
-	margin-inline-end: 10px !important;
 	visibility: visible !important;
 	opacity: 1 !important;
+	margin: 0 !important;
+	margin-inline-end: 10px !important;
+	padding: 0 !important;
 	font-size: 13px !important;
 }
 

@@ -18,9 +18,9 @@
 	& > #urlbar-searchmode-switcher,
 	& > #page-action-buttons > hbox,
 	& > #identity-box > box {
-		background-color: transparent !important;
 		opacity: 0.7 !important;
 		margin: 0 !important;
+		background-color: transparent !important;
 		padding: 6px !important;
 		font-size: 85% !important;
 
@@ -39,9 +39,9 @@
 
 	/* Special case: "Go" button is a single <img> */
 	.urlbar-icon.urlbar-go-button {
-		background-color: transparent !important;
 		opacity: 0.7 !important;
 		margin: 6px !important;
+		background-color: transparent !important;
 		padding: 0 !important;
 		width: 16px !important;
 		height: 16px !important;
@@ -52,6 +52,12 @@
 			opacity: 1 !important;
 			background-color: transparent !important;
 		}
+	}
+
+	/* Lazy fix for search engine switcher */
+	.searchmode-switcher {
+		--button-border-radius: 6px !important;
+		margin-inline-start: -4px !important;
 	}
 }
 
@@ -72,9 +78,9 @@
 
 	&.urlbar-page-action,
 	&.urlbar-revert-button-container {
+		padding: 0 !important;
 		width: 28px !important;
 		height: 28px !important;
-		padding: 0 !important;
 	}
 
 	&[disabled] {
@@ -86,13 +92,13 @@
 .search-go-button,
 .urlbar-icon,
 .urlbar-revert-button {
-	height: 16px !important;
-	width: 16px !important;
-	margin: auto !important;
-	padding: 0 !important;
+	filter: saturate(0%) brightness(120%) !important;
 	fill: currentColor !important;
 	fill-opacity: 1 !important;
-	filter: saturate(0%) brightness(120%) !important;
+	margin: auto !important;
+	padding: 0 !important;
+	width: 16px !important;
+	height: 16px !important;
 }
 
 /* URL bar and Search bar */
@@ -114,8 +120,8 @@
 	&:hover,
 	&[open],
 	&:hover:active {
-		background-color: transparent !important;
 		fill-opacity: 1 !important;
+		background-color: transparent !important;
 	}
 }
 
@@ -123,8 +129,8 @@
 	&:hover .searchbar-search-icon,
 	&[open] .searchbar-search-icon,
 	&:hover:active .searchbar-search-icon {
-		background-color: transparent !important;
 		fill-opacity: 1 !important;
+		background-color: transparent !important;
 	}
 }
 
@@ -137,18 +143,18 @@
 
 /* Search mode indicator */
 #urlbar-search-mode-indicator {
-	font-size: 75%;
 	margin-block: 5px;
+	font-size: 75%;
 }
 
 /* Centre URL bar text input */
 #urlbar-input {
 	position: absolute;
+	transform: translateX(50%);
+	transition: transform 0.3s cubic-bezier(0, 0.7, 0.3, 1);
 	width: 50%;
 	height: 100%;
 	text-align: center !important;
-	transform: translateX(50%);
-	transition: transform 0.3s cubic-bezier(0, 0.7, 0.3, 1);
 
 	#urlbar[focused] & {
 		transform: translateX(0);
@@ -164,23 +170,23 @@
 
 /* URL bar popup */
 .urlbarView {
-	width: 100% !important;
-	padding: 4px !important;
 	margin: 4px 0 !important;
-	border-radius: var(--macos-menu-border-radius) !important;
-	background: var(--macos-menu-background) !important;
-	border: var(--macos-menu-border) !important;
-	color: var(--macos-button-menulist-color) !important;
 	outline: var(--macos-menu-outline) !important;
 	box-shadow: 0 0 15px #00000040 !important;
+	border: var(--macos-menu-border) !important;
+	border-radius: var(--macos-menu-border-radius) !important;
+	background: var(--macos-menu-background) !important;
+	padding: 4px !important;
+	width: 100% !important;
+	color: var(--macos-button-menulist-color) !important;
 
 	.urlbarView-row-inner,
 	.urlbarView-row {
-		min-height: 0 !important;
-		padding: 0 !important;
 		align-items: center !important;
 		border: none !important;
 		border-radius: var(--macos-menu-item-border-radius) !important;
+		padding: 0 !important;
+		min-height: 0 !important;
 	}
 
 	.urlbarView-row-inner {
@@ -195,10 +201,10 @@
 	.urlbarView-action,
 	.urlbarView-url {
 		visibility: visible !important;
+		opacity: 0.6 !important;
 		margin: 0 !important;
 		padding-inline: 0 !important;
 		color: inherit !important;
-		opacity: 0.6 !important;
 	}
 
 	.urlbarView-results {
@@ -220,12 +226,12 @@
 
 		&::before {
 			top: -2.5em !important;
-			width: calc(100% - 18px) !important;
-			padding-block-start: 6px !important;
 			margin-inline: 9px !important;
+			border-top: 1px solid var(--macos-menu-separator-color) !important;
+			padding-block-start: 6px !important;
+			width: calc(100% - 18px) !important;
 			color: var(--macos-menu-separator-color) !important;
 			font-weight: 700 !important;
-			border-top: 1px solid var(--macos-menu-separator-color) !important;
 		}
 	}
 
@@ -271,9 +277,9 @@
 	}
 
 	.urlbarView-body-inner {
-		width: 100% !important;
 		margin: 0 !important;
 		border: 0 !important;
+		width: 100% !important;
 	}
 
 	.urlbarView-no-wrap {
@@ -288,11 +294,11 @@
 		> .urlbarView-row-inner
 		> .urlbarView-no-wrap
 		> .urlbarView-action {
-		padding: 1px 8px !important;
 		margin-inline: 0.5em !important;
-		border-radius: 8px !important;
 		border: var(--macos-menu-border) !important;
+		border-radius: 8px !important;
 		background-color: transparent !important;
+		padding: 1px 8px !important;
 	}
 
 	:root:not([uidensity="compact"])
@@ -339,13 +345,13 @@
 .searchbar-engine-one-off-item {
 	--toolbarbutton-active-background: transparent !important;
 	--toolbarbutton-hover-background: transparent !important;
-	background: var(--macos-button-background) !important;
+	margin: 0 !important;
 	box-shadow: var(--macos-button-box-shadow) !important;
 	border: 1px solid var(--macos-button-border-color) !important;
 	border-left-width: 0 !important;
 	border-bottom-color: var(--macos-button-border-accent-color) !important;
+	background: var(--macos-button-background) !important;
 	padding: 0 2px !important;
-	margin: 0 !important;
 
 	&:hover,
 	&[selected] {
@@ -354,8 +360,8 @@
 	}
 
 	&:first-child {
-		border-radius: 5px 0 0 5px;
 		border-left-width: 1px !important;
+		border-radius: 5px 0 0 5px;
 	}
 
 	&.last-engine,
@@ -365,8 +371,8 @@
 }
 
 #urlbar-anon-search-settings-compact {
-	border-left-width: 1px !important;
-	border-bottom: 1px solid var(--macos-button-border-accent-color) !important;
-	border-radius: 5px;
 	margin-left: 6px !important;
+	border-bottom: 1px solid var(--macos-button-border-accent-color) !important;
+	border-left-width: 1px !important;
+	border-radius: 5px;
 }

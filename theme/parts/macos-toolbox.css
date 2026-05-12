@@ -15,8 +15,8 @@
 }
 
 .toolbarbutton-icon {
-	color: inherit;
 	fill: var(--macos-headerbar-color);
+	color: inherit;
 }
 
 #nav-bar toolbarbutton > *:not(menupopup) {
@@ -27,21 +27,21 @@
 #PersonalToolbar,
 #toolbar-menubar {
 	border: 0 !important;
-	color: var(--macos-headerbar-color);
-	background: var(--macos-headerbar-background) !important;
 	border-bottom: none !important;
+	background: var(--macos-headerbar-background) !important;
+	color: var(--macos-headerbar-color);
 }
 
 #TabsToolbar {
-	background: var(--macos-tabstoolbar-background) !important;
 	border: 0 !important;
 	border-bottom: 1px solid var(--macos-headerbar-border-color) !important;
+	background: var(--macos-tabstoolbar-background) !important;
 }
 
 findbar {
 	border: 0 !important;
-	background: var(--macos-findbar-background) !important;
 	border-bottom: 1px solid var(--macos-headerbar-border-color) !important;
+	background: var(--macos-findbar-background) !important;
 }
 
 #nav-bar:-moz-window-inactive,
@@ -108,8 +108,8 @@ findbar {
 }
 
 #TabsToolbar[movingtab] > .tabbrowser-tabs {
-	padding-bottom: 0 !important;
 	margin-bottom: 0 !important;
+	padding-bottom: 0 !important;
 }
 
 #TabsToolbar[movingtab] + #nav-bar {
@@ -124,6 +124,8 @@ toolbarbutton.bookmark-item {
 
 /* Fix reload button animation overlap with icon */
 
-#reload-button:not([displaystop]) > .toolbarbutton-animatable-box > .toolbarbutton-animatable-image {
+#reload-button:not([displaystop])
+	> .toolbarbutton-animatable-box
+	> .toolbarbutton-animatable-image {
 	animation-duration: 0s !important;
 }

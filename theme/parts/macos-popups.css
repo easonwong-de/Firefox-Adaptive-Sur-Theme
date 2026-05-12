@@ -26,12 +26,12 @@
 menupopup {
 	appearance: none;
 	-moz-appearance: none !important;
-	padding: var(--macos-menu-padding) !important;
-	border-radius: var(--macos-menu-border-radius) !important;
-	border: var(--macos-menu-border) !important;
 	outline: var(--macos-menu-outline) !important;
-	color: var(--macos-headerbar-color) !important;
+	border: var(--macos-menu-border) !important;
+	border-radius: var(--macos-menu-border-radius) !important;
 	background-color: var(--macos-menu-background) !important;
+	padding: var(--macos-menu-padding) !important;
+	color: var(--macos-headerbar-color) !important;
 
 	menupopup {
 		margin: -5px 0 0 0 !important;
@@ -41,8 +41,8 @@ menupopup {
 	menu {
 		appearance: none;
 		-moz-appearance: none !important;
-		padding: var(--macos-menu-item-padding) !important;
 		margin: var(--macos-menu-item-margin) !important;
+		padding: var(--macos-menu-item-padding) !important;
 		min-height: unset !important;
 	}
 
@@ -52,8 +52,8 @@ menupopup {
 	> menuitem[_moz-menuactive="true"]:hover:active,
 	> menu:where([_moz-menuactive="true"]:not([disabled="true"])),
 	> menuitem:where([_moz-menuactive="true"]:not([disabled="true"])) {
-		color: var(--macos-menu-item-hover-color) !important;
 		background-color: var(--macos-menu-item-hover) !important;
+		color: var(--macos-menu-item-hover-color) !important;
 		--macos-headerbar-button-hover-background: var(
 			--macos-menu-item-hover
 		) !important;
@@ -76,8 +76,8 @@ menupopup {
 }
 
 menubar > menu > menupopup {
-	border-top-left-radius: 0 !important;
 	border-top-right-radius: 0 !important;
+	border-top-left-radius: 0 !important;
 }
 
 menuitem[type="checkbox"] image,
@@ -129,10 +129,10 @@ panel {
 
 .panel-arrowcontent {
 	--panel-background: var(--macos-menu-background) !important;
-	border: var(--macos-menu-border) !important;
 	outline: var(--macos-menu-outline) !important;
-	background-color: var(--macos-menu-background) !important;
+	border: var(--macos-menu-border) !important;
 	border-radius: var(--macos-menu-border-radius) !important;
+	background-color: var(--macos-menu-background) !important;
 	padding: 12px !important;
 	color: var(--macos-headerbar-color) !important;
 	font: inherit !important;
@@ -149,8 +149,10 @@ panel {
 	}
 }
 
+/* Popup item container */
 .panel-subview-body,
-.PanelUI-subView {
+.PanelUI-subView,
+.searchmode-switcher-panel-list {
 	padding: 0 !important;
 
 	> *,
@@ -161,7 +163,7 @@ panel {
 	#appMenu_historyMenu > *,
 	#identity-popup-more-info-footer > toolbarbutton,
 	#widget-overflow-mainView > toolbarbutton {
-		&:not(toolbarseparator, menuseparator) {
+		&:not(toolbarseparator, menuseparator, hr) {
 			margin: 0 !important;
 		}
 	}
@@ -175,23 +177,21 @@ panel {
 	border-radius: var(--macos-headerbar-border-radius) !important;
 }
 
-.subviewbutton:not(.subviewbutton-back):not(.toolbarbutton-text),
-.protections-popup-category,
-.protections-popup-category[disabled],
-.identity-popup-content-blocking-category {
-	border-radius: var(--macos-menu-item-border-radius) !important;
-	color: inherit;
-	font: menu;
-}
-
+/* Popup item layout */
 .all-tabs-item,
 .subviewbutton:not(.subviewbutton-back):not(.toolbarbutton-1):not(
 		.all-tabs-button
 	):not(.all-tabs-close-button),
 .protections-popup-category,
-.identity-popup-content-blocking-category {
-	padding: var(--macos-menu-item-padding) !important;
+.identity-popup-content-blocking-category,
+.searchmode-switcher-panel-description,
+.searchmode-switcher-local,
+.searchmode-switcher-installed {
 	margin: 0 !important;
+	border-radius: var(--macos-menu-item-border-radius) !important;
+	padding: var(--macos-menu-item-padding) !important;
+	color: inherit;
+	font: menu;
 }
 
 .subviewbutton#appMenu-fxa-label2 {
@@ -215,10 +215,25 @@ panel {
 	opacity: 0.5 !important;
 }
 
+.searchmode-switcher-panel-list > panel-item::part(button) {
+	&:not(.this-needs-to-be-here-to-work) {
+		margin: 0 !important;
+		border-radius: unset !important;
+		background-position: 0 center !important;
+		background-size: 1em 1em !important;
+		background-color: transparent !important;
+		padding: 0 !important;
+		padding-inline-start: calc(1em + 8px) !important;
+		color: inherit !important;
+	}
+}
+
 /* Popover items on hover - blue */
 .bookmark-item,
 panelview .toolbarbutton-1,
 toolbarbutton.subviewbutton,
+.searchmode-switcher-installed,
+.searchmode-switcher-local,
 .protections-popup-footer-button,
 .subviewbutton.sendToDevice-device,
 #nav-bar .panel-subview-body toolbarbutton,
@@ -231,8 +246,8 @@ toolbarbutton.subviewbutton,
 	.panel-subview-footer-button
 ) {
 	&:hover {
-		color: var(--macos-menu-item-hover-color) !important;
 		background-color: var(--macos-menu-item-hover) !important;
+		color: var(--macos-menu-item-hover-color) !important;
 		--macos-headerbar-button-hover-background: var(
 			--macos-menu-item-hover
 		) !important;
@@ -264,11 +279,11 @@ toolbarbutton.subviewbutton,
 			height: 100% !important;
 
 			> .menu-iconic-icon {
-				padding: 6px !important;
 				background-color: transparent !important;
+				padding: 6px !important;
 				width: auto !important;
-				height: auto !important;
 				max-width: 100% !important;
+				height: auto !important;
 				max-height: 100% !important;
 			}
 		}
@@ -277,17 +292,19 @@ toolbarbutton.subviewbutton,
 
 .protections-popup-category:not([disabled]):hover,
 .identity-popup-content-blocking-category:not([disabled]):hover {
-	color: var(--macos-menu-item-hover-color) !important;
 	background: var(--macos-menu-item-hover) !important;
+	color: var(--macos-menu-item-hover-color) !important;
 }
 
 /* Style popover separators */
 toolbarseparator,
-menuseparator {
-	padding: 0 !important;
+menuseparator,
+#searchmode-switcher-panel-list-urlbar hr {
+	opacity: 0.4 !important;
 	margin: 6px 8px !important;
 	border-top: 1px solid var(--macos-menu-separator-color) !important;
-	opacity: 0.4 !important;
+	background-color: transparent !important;
+	padding: 0 !important;
 
 	&[orient="vertical"] {
 		margin: 0 3px !important;
@@ -305,9 +322,9 @@ menuseparator {
 
 /* Webchat e.g. google meet share screen display select */
 #webRTC-selectWindow-menulist {
-	color: var(--macos-inactive-urlbar-color) !important;
-	background: var(--macos-button-hover-background) !important;
 	border-radius: 5px;
+	background: var(--macos-button-hover-background) !important;
+	color: var(--macos-inactive-urlbar-color) !important;
 }
 
 /* Proton right click menu */
@@ -365,11 +382,11 @@ menuseparator {
 }
 
 .menupopup-arrowscrollbox {
-	box-shadow: none !important;
 	margin: 0 !important;
-	padding: 0 !important;
-	background: transparent !important;
+	box-shadow: none !important;
 	border: 0 !important;
+	background: transparent !important;
+	padding: 0 !important;
 	max-width: 100% !important;
 }
 
@@ -381,34 +398,34 @@ menuseparator {
 
 /* Cancel or secondary */
 .dialog-button-box > button {
-	background-color: var(--macos-button-active-background-alt) !important;
 	border: 1px solid var(--macos-button-active-background-alt-border);
+	background-color: var(--macos-button-active-background-alt) !important;
 	color: var(--macos-button-menulist-color) !important;
 }
 
 xul|button:not([disabled="true"]):hover {
+	border: 1px solid var(--macos-button-active-background-alt-border);
+	border-color: var(--macos-button-active-border-color) !important;
 	background-color: var(
 		--macos-button-active-background-alt-hover
 	) !important;
-	border: 1px solid var(--macos-button-active-background-alt-border);
-	border-color: var(--macos-button-active-border-color) !important;
 	color: var(--macos-button-menulist-color) !important;
 }
 
 /* Quit or primary button */
 xul|button[default] {
+	border-color: var(--macos-button-suggested-action-border-color) !important;
 	background-color: var(
 		--macos-button-suggested-action-background
 	) !important;
-	border-color: var(--macos-button-suggested-action-border-color) !important;
 	color: var(--macos-button-menulist-color) !important;
 }
 
 xul|button[default]:not([disabled="true"]):hover {
+	border-color: var(--macos-button-suggested-action-border-color) !important;
 	background-color: var(
 		--macos-button-suggested-action-hover-background
 	) !important;
-	border-color: var(--macos-button-suggested-action-border-color) !important;
 	color: var(--macos-button-menulist-color) !important;
 }
 
@@ -475,20 +492,20 @@ browser[primary="true"][tabDialogShowing="true"],
 	width: fit-content !important;
 
 	> richlistbox {
-		width: fit-content !important;
-		height: fit-content !important;
 		margin: 0 !important;
 		background-color: transparent !important;
+		width: fit-content !important;
+		height: fit-content !important;
 		color: inherit !important;
 
 		> richlistitem {
 			justify-content: flex-start !important;
 			box-sizing: content-box !important;
-			min-height: 20px !important;
-			padding: var(--macos-menu-item-padding) !important;
-			background-color: transparent !important;
 			border: none !important;
 			border-radius: var(--macos-menu-item-border-radius) !important;
+			background-color: transparent !important;
+			padding: var(--macos-menu-item-padding) !important;
+			min-height: 20px !important;
 
 			&,
 			.ac-title {
@@ -496,8 +513,8 @@ browser[primary="true"][tabDialogShowing="true"],
 			}
 
 			&:hover {
-				color: var(--macos-menu-item-hover-color) !important;
 				background-color: var(--macos-menu-item-hover) !important;
+				color: var(--macos-menu-item-hover-color) !important;
 			}
 
 			> .ac-login-item > .ac-settings-button {
@@ -511,32 +528,40 @@ browser[primary="true"][tabDialogShowing="true"],
 	}
 
 	.autocomplete-richlistitem[originaltype="loginsFooter"] {
-		font: menu !important;
-		margin-block-start: 12px;
 		position: relative;
+		margin-block-start: 12px;
 		overflow: visible !important;
 		color: inherit !important;
+		font: menu !important;
 
 		&::before {
-			pointer-events: none !important;
-			content: "";
 			position: absolute;
 			top: -6px;
 			left: 5px;
-			width: calc(100% - 10px);
 			border-top: 1px solid var(--macos-menu-separator-color);
+			width: calc(100% - 10px);
+			pointer-events: none !important;
+			content: "";
 		}
 	}
 }
 
 /* Search bar menu */
 #PopupSearchAutoComplete > hbox.search-panel-header {
-	padding: var(--macos-menu-item-padding) !important;
 	border-radius: var(--macos-menu-item-border-radius) !important;
+	padding: var(--macos-menu-item-padding) !important;
 
 	&:hover {
 		background-color: var(--macos-menu-item-hover);
 	}
+}
+
+/* Search engine menu */
+#searchmode-switcher-panel-list-urlbar {
+	margin: 0 !important;
+	box-shadow: none !important;
+	background-color: transparent !important;
+	padding: 0 !important;
 }
 
 /* Tab Preview Panel */

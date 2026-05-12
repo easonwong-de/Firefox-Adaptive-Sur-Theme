@@ -1,0 +1,23 @@
+{
+	"name": "firefox-adaptive-sur-theme",
+	"version": "2.3.0",
+	"description": "A macOS-styled Firefox CSS theme based on Firefox WhiteSur theme with Adaptive Tab Bar Colour support.",
+	"homepage": "https://github.com/easonwong-de/Firefox-Adaptive-Sur-Theme#readme",
+	"bugs": {
+		"url": "https://github.com/easonwong-de/Firefox-Adaptive-Sur-Theme/issues"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/easonwong-de/Firefox-Adaptive-Sur-Theme.git"
+	},
+	"license": "MIT",
+	"author": "Eason Wong <me@easonwong.de> (https://easonwong.de/)",
+	"scripts": {
+		"format": "prettier --write --list-different theme"
+	},
+	"type": "module",
+	"devDependencies": {
+		"prettier": "^3.8.3",
+		"prettier-plugin-css-order": "^2.2.0"
+	}
+}

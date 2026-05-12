@@ -7,8 +7,8 @@ toolbarbutton#alltabs-button {
 }
 
 #alltabs-button:not(#hack) {
-	list-style-image: none !important;
 	position: relative;
+	list-style-image: none !important;
 }
 
 #alltabs-button:not(#hack) .toolbarbutton-icon {

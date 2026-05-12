@@ -9,20 +9,31 @@ url("about:newtab") {
 		cursor: auto !important;
 	}
 
-	.non-collapsible-section {
+	.nova-enabled.container {
+		grid-template-columns: 1fr 2fr 1fr !important;
+	}
+
+	.nova-enabled.logo-in-content .content {
+		grid-row: 4 / span 3 !important;
+	}
+
+	.non-collapsible-section,
+	.logo-and-wordmark-wrapper,
+	.search-wrapper {
 		display: none !important;
 	}
 
 	.section-title > span,
 	.top-sites-list-wrapper::before {
-		content: "Favourites";
 		display: block;
 		padding: 2rem 0 !important;
-		font-size: 22px !important;
+		content: "Favourites";
 		font-weight: 900 !important;
+		font-size: 22px !important;
 	}
 
 	.top-sites-list {
+		justify-content: start !important;
 		margin: 0 !important;
 
 		.hide-for-narrow {
@@ -31,9 +42,9 @@ url("about:newtab") {
 	}
 
 	.top-site-outer {
-		width: 80px !important;
 		vertical-align: top !important;
 		padding: 0 !important;
+		width: 80px !important;
 
 		&:is(.active, :focus, :hover) {
 			background: transparent !important;
@@ -44,23 +55,23 @@ url("about:newtab") {
 		}
 
 		.tile {
+			backdrop-filter: blur(25px);
+			outline: none !important;
+			box-shadow: 0 0 10px #00000040 !important;
+			border-radius: 10px !important;
+			background-color: #b3b3b353 !important;
 			width: 60px !important;
 			height: 60px !important;
-			border-radius: 10px !important;
 			overflow: hidden !important;
-			background-color: #b3b3b353 !important;
-			backdrop-filter: blur(25px);
-			box-shadow: 0 0 10px #00000040 !important;
-			outline: none !important;
 
 			.icon-wrapper {
+				border-radius: 0px !important;
 				width: 100% !important;
 				height: 100% !important;
-				border-radius: 0px !important;
 
 				&.letter-fallback::before {
-					transform: none !important;
 					top: auto !important;
+					transform: none !important;
 				}
 			}
 		}
@@ -69,21 +80,22 @@ url("about:newtab") {
 			background-color: transparent !important;
 		}
 
-		.title span {
+		.title-label {
 			padding-inline: 6px !important;
+			width: auto !important;
 			overflow: visible !important;
-			white-space: normal !important;
-			user-select: none !important;
-			font-size: 12px !important;
 			font-weight: 500 !important;
+			font-size: 12px !important;
+			user-select: none !important;
+			white-space: nowrap !important;
 			overflow-wrap: break-word !important;
 		}
 
 		.context-menu-button {
-			inset-inline-end: 12.5px !important;
-			top: 2.5px !important;
-			border-radius: 50% !important;
 			backdrop-filter: blur(10px) brightness(0.75) saturate(2.5) !important;
+			inset-block-start: 2.5px !important;
+			inset-inline-end: 12.5px !important;
+			border-radius: 50% !important;
 			background-color: var(--context-menu-background) !important;
 		}
 	}
@@ -93,30 +105,30 @@ url("about:newtab") {
 	}
 
 	.context-menu {
-		inset-block-start: 0 !important;
-		inset-inline-start: 70px !important;
-		inset-inline-end: unset !important;
-		padding: 4px !important;
-		border-radius: 6px !important;
-		border: var(--context-menu-border);
-		outline: var(--context-menu-outline);
-		font-size: 14px !important;
-		background-color: var(--context-menu-background) !important;
 		backdrop-filter: blur(25px) !important;
+		inset-block-start: 0 !important;
+		inset-inline-end: unset !important;
+		inset-inline-start: 70px !important;
+		outline: var(--context-menu-outline);
+		border: var(--context-menu-border);
+		border-radius: 6px !important;
+		background-color: var(--context-menu-background) !important;
+		padding: 4px !important;
+		font-size: 14px !important;
 
 		ul {
 			padding: 0 !important;
 		}
 
 		.separator {
-			width: auto !important;
 			margin: 5px 13px !important;
+			width: auto !important;
 		}
 
 		a,
 		button {
-			font-weight: 500 !important;
 			border-radius: 4px !important;
+			font-weight: 500 !important;
 		}
 
 		a:hover,
@@ -126,21 +138,21 @@ url("about:newtab") {
 	}
 
 	.modal {
-		border: var(--context-menu-border) !important;
-		outline: var(--context-menu-outline) !important;
-		background-color: var(--context-menu-background) !important;
 		backdrop-filter: blur(25px) !important;
+		outline: var(--context-menu-outline) !important;
+		border: var(--context-menu-border) !important;
 		border-radius: 8px !important;
+		background-color: var(--context-menu-background) !important;
 	}
 
 	.customize-menu {
-		margin: 12px !important;
-		height: auto !important;
-		border: var(--context-menu-border) !important;
-		outline: var(--context-menu-outline) !important;
-		background-color: var(--context-menu-background) !important;
 		backdrop-filter: blur(25px) !important;
+		margin: 12px !important;
+		outline: var(--context-menu-outline) !important;
+		border: var(--context-menu-border) !important;
 		border-radius: 8px !important;
+		background-color: var(--context-menu-background) !important;
+		height: auto !important;
 
 		.close-button-wrapper {
 			background-color: transparent !important;

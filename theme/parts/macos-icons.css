@@ -24,12 +24,12 @@
 /* Popovers subview menu arrow */
 
 .PanelUI-subView .subviewbutton-nav::after {
-	content: "" !important;
+	margin-top: -2px !important;
 	background: url("../icons/pan-start-symbolic.svg");
 	background-size: contain;
-	height: 16px;
 	width: 16px;
-	margin-top: -2px !important;
+	height: 16px;
+	content: "" !important;
 }
 
 .protections-popup-category::after {
@@ -55,9 +55,9 @@
 .menu-right {
 	appearance: none;
 	-moz-appearance: none !important;
-	list-style-image: url("../icons/pan-end-symbolic.svg") !important;
 	width: 16px !important;
 	height: 16px !important;
+	list-style-image: url("../icons/pan-end-symbolic.svg") !important;
 }
 
 menu[disabled] > .menu-right {
@@ -75,9 +75,9 @@ menu[disabled] > .menu-right {
 #viewButton .button-menu-dropmarker {
 	appearance: none;
 	-moz-appearance: none !important;
-	list-style-image: url("../icons/pan-down-symbolic.svg") !important;
 	width: 16px !important;
 	height: 16px !important;
+	list-style-image: url("../icons/pan-down-symbolic.svg") !important;
 }
 
 .menulist-label-box:after {
@@ -89,9 +89,9 @@ menu[disabled] > .menu-right {
 .expander-up > .button-box {
 	appearance: none;
 	-moz-appearance: none !important;
-	list-style-image: url("../icons/pan-up-symbolic.svg") !important;
 	width: 16px !important;
 	height: 16px !important;
+	list-style-image: url("../icons/pan-up-symbolic.svg") !important;
 }
 
 /* Search entries */
@@ -99,21 +99,21 @@ menu[disabled] > .menu-right {
 #urlbar[pageproxystate="invalid"] > #identity-box > #identity-icon,
 .searchbar-search-icon,
 #search-box .textbox-search-sign {
-	list-style-image: url("../icons/edit-find-symbolic.svg") !important;
 	opacity: 0.7 !important;
+	list-style-image: url("../icons/edit-find-symbolic.svg") !important;
 }
 
 #search-box .textbox-search-sign {
-	width: 16px !important;
 	margin: 2px 0;
+	width: 16px !important;
 }
 
 /* Tree views */
 
 treechildren::-moz-tree-twisty {
-	list-style-image: url("../icons/pan-down-symbolic.svg") !important;
 	width: 16px !important;
 	height: 16px !important;
+	list-style-image: url("../icons/pan-down-symbolic.svg") !important;
 }
 
 treechildren::-moz-tree-twisty(open) {
@@ -128,11 +128,13 @@ treechildren::-moz-tree-twisty(selected, focus, open) {
 	list-style-image: url("../icons/pan-end-symbolic-light.svg") !important;
 }
 
-.sidebar-panel[lwt-sidebar-brighttext] .sidebar-placesTreechildren::-moz-tree-twisty {
+.sidebar-panel[lwt-sidebar-brighttext]
+	.sidebar-placesTreechildren::-moz-tree-twisty {
 	list-style-image: url("../icons/pan-down-symbolic-light.svg") !important;
 }
 
-.sidebar-panel[lwt-sidebar-brighttext] .sidebar-placesTreechildren::-moz-tree-twisty(open) {
+.sidebar-panel[lwt-sidebar-brighttext]
+	.sidebar-placesTreechildren::-moz-tree-twisty(open) {
 	list-style-image: url("../icons/pan-end-symbolic-light.svg") !important;
 }
 
@@ -350,21 +352,21 @@ menuitem[type="radio"][disabled="true"] .menu-iconic-icon {
 /* Glitch - animations (may be possible to fix in about:config) */
 
 #reload-button {
+	animation: none !important;
 	/* Reload button */
 	list-style-image: url("../icons/view-refresh-symbolic.svg") !important;
-	animation: none !important;
 }
 
 #stop-button {
+	animation: none !important;
 	/* Stop button */
 	list-style-image: url("../icons/process-stop-symbolic.svg") !important;
-	animation: none !important;
 }
 
 #downloads-button .toolbarbutton-icon {
+	animation: none !important;
 	/* Downloads button / Glitch - it swaps to the default one anyway */
 	list-style-image: url("../icons/folder-download-symbolic.svg") !important;
-	animation: none !important;
 }
 
 #identity-box[pageproxystate="valid"].verifiedDomain #identity-icon,
@@ -374,7 +376,8 @@ menuitem[type="radio"][disabled="true"] .menu-iconic-icon {
 
 #identity-box[pageproxystate="valid"].weakCipher #identity-icon,
 #identity-box[pageproxystate="valid"].mixedDisplayContent #identity-icon,
-#identity-box[pageproxystate="valid"].mixedDisplayContentLoadedActiveBlocked #identity-icon,
+#identity-box[pageproxystate="valid"].mixedDisplayContentLoadedActiveBlocked
+	#identity-icon,
 #identity-box[pageproxystate="valid"].certUserOverridden #identity-icon,
 #identity-box[pageproxystate="valid"].certErrorPage #identity-icon {
 	list-style-image: url("../icons/security-warning-symbolic.svg") !important;
@@ -408,12 +411,14 @@ menuitem[type="radio"][disabled="true"] .menu-iconic-icon {
 	list-style-image: url("../icons/starred-symbolic.svg") !important;
 }
 
-#plugins-notification-icon:not(.plugin-blocked)[extraAttr="inactive"] > .plugin-icon {
+#plugins-notification-icon:not(.plugin-blocked)[extraAttr="inactive"]
+	> .plugin-icon {
 	fill-opacity: 0.25;
 	list-style-image: url("../icons/application-x-addon-symbolic.svg") !important;
 }
 
-#plugins-notification-icon:not(.plugin-blocked)[extraAttr="active"] > .plugin-icon {
+#plugins-notification-icon:not(.plugin-blocked)[extraAttr="active"]
+	> .plugin-icon {
 	fill-opacity: 1;
 	list-style-image: url("../icons/application-x-addon-symbolic.svg") !important;
 }

@@ -4,25 +4,27 @@
 
 @media screen and (-moz-platform: windows) {
 	#TabsToolbar .titlebar-buttonbox .titlebar-button {
-		list-style-image: none !important;
-		padding: 2px !important;
 		margin: 0 4px !important;
 		background-color: transparent !important;
+		padding: 2px !important;
+		list-style-image: none !important;
 	}
 
 	:root[sizemode="maximized"] #TabsToolbar {
 		appearance: none !important;
 	}
 
-	:root:not([sizemode="maximized"]) #TabsToolbar .titlebar-buttonbox-container {
+	:root:not([sizemode="maximized"])
+		#TabsToolbar
+		.titlebar-buttonbox-container {
 		top: 15px !important;
 		padding: 2px 0 0 8px !important;
 	}
 
 	:root[inFullscreen] #TabsToolbar .titlebar-buttonbox-container {
+		order: 0 !important;
 		margin-top: -34px;
 		margin-bottom: 44px !important;
-		order: 0 !important;
 	}
 
 	tab {

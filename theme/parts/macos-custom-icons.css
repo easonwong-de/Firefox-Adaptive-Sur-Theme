@@ -19,13 +19,13 @@
 /* Popovers subview menu arrow */
 
 .PanelUI-subView .subviewbutton-nav::after {
-	content: "" !important;
+	margin-top: -2px !important;
 	/* filter: var(--macos-icons-hack-filter); */
 	background: url("moz-icon://stock/pan-start-symbolic?size=dialog");
 	background-size: contain;
-	height: 16px;
 	width: 16px;
-	margin-top: -2px !important;
+	height: 16px;
+	content: "" !important;
 }
 
 /* Popovers subview back button */

@@ -8,8 +8,8 @@
 
 #tabbrowser-tabs,
 #tabbrowser-tabs arrowscrollbox {
-	height: auto !important;
 	padding: 0 !important;
+	height: auto !important;
 }
 
 #TabsToolbar {

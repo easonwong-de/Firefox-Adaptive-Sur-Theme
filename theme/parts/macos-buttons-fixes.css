@@ -9,25 +9,29 @@
 }
 
 :root:not([uidensity="compact"]) #back-button > .toolbarbutton-icon {
-	background-color: unset !important;
+	box-shadow: none !important;
 	border: unset !important;
+	border-radius: var(--macos-headerbar-border-radius);
+	background-color: unset !important;
+	padding: var(--toolbarbutton-inner-padding) !important;
 	width: calc(2 * var(--toolbarbutton-inner-padding) + 16px) !important;
 	height: calc(2 * var(--toolbarbutton-inner-padding) + 16px) !important;
-	padding: var(--toolbarbutton-inner-padding) !important;
-	border-radius: var(--macos-headerbar-border-radius);
-	box-shadow: none !important;
 }
 
-:root:not([uidensity="compact"]) #back-button:not([disabled]):not([open]):hover > .toolbarbutton-icon {
-	background-color: var(--toolbarbutton-hover-background) !important;
+:root:not([uidensity="compact"])
+	#back-button:not([disabled]):not([open]):hover
+	> .toolbarbutton-icon {
 	box-shadow: unset;
 	border-color: unset;
+	background-color: var(--toolbarbutton-hover-background) !important;
 }
 
 :root:not([uidensity="compact"]) #back-button[open] > .toolbarbutton-icon,
-:root:not([uidensity="compact"]) #back-button:not([disabled]):hover:active > .toolbarbutton-icon {
-	background-color: var(--toolbarbutton-active-background) !important;
+:root:not([uidensity="compact"])
+	#back-button:not([disabled]):hover:active
+	> .toolbarbutton-icon {
 	border-color: unset;
+	background-color: var(--toolbarbutton-active-background) !important;
 }
 
 /* Remove the header bar buttons' hover styles */
@@ -46,16 +50,25 @@
 
 /* Glitch customizing: Reload and Cut / Copy / Paste buttons */
 
-:root:-moz-window-inactive[customizing] #nav-bar #stop-reload-button toolbarbutton,
+:root:-moz-window-inactive[customizing]
+	#nav-bar
+	#stop-reload-button
+	toolbarbutton,
 :root:-moz-window-inactive[customizing] #nav-bar #edit-controls toolbarbutton {
-	background-image: var(--macos-inactive-button-background);
 	box-shadow: var(--macos-inactive-button-box-shadow);
+	background-image: var(--macos-inactive-button-background);
 }
 
 /* Glitch customizing: Reload and Cut / Copy / Paste buttons' icons */
 
-:root:-moz-window-inactive[customizing] #nav-bar #stop-reload-button image.toolbarbutton-icon,
-:root:-moz-window-inactive[customizing] #nav-bar #edit-controls image.toolbarbutton-icon {
+:root:-moz-window-inactive[customizing]
+	#nav-bar
+	#stop-reload-button
+	image.toolbarbutton-icon,
+:root:-moz-window-inactive[customizing]
+	#nav-bar
+	#edit-controls
+	image.toolbarbutton-icon {
 	opacity: 0.7 !important;
 }
 
@@ -69,7 +82,10 @@
 
 /* Glitch: Overflow button's icon */
 
-:root[customizing] #nav-bar toolbarbutton:not(#urlbar-zoom-button)[disabled] image {
+:root[customizing]
+	#nav-bar
+	toolbarbutton:not(#urlbar-zoom-button)[disabled]
+	image {
 	fill-opacity: var(--toolbarbutton-icon-fill-opacity) !important;
 }
 
@@ -90,8 +106,8 @@
 /* Remove Burger button's left separator */
 
 #PanelUI-button {
-	border: 0 !important;
 	margin: 0 !important;
+	border: 0 !important;
 	padding-inline-start: 0 !important;
 }
 
@@ -110,9 +126,9 @@
 /* Fix toolbars close icons */
 
 .close-icon:not(.tab-close-button) image {
-	height: 16px !important;
-	width: 16px !important;
 	margin: 6px !important;
+	width: 16px !important;
+	height: 16px !important;
 }
 
 #appMenu-popup .panel-banner-item[notificationid="update-restart"]::after {
@@ -137,8 +153,8 @@
 
 .findbar-container .findbar-find-previous image,
 .findbar-container .findbar-find-next image {
-	margin: 6px !important;
 	opacity: 1 !important;
+	margin: 6px !important;
 }
 
 .findbar-container toolbarbutton:focus {
@@ -153,8 +169,8 @@
 #history-panel,
 #bookmarks-view-children,
 #historyTree {
-	font-size: 0.9em !important;
 	color: var(--macos-sidebar-color) !important;
+	font-size: 0.9em !important;
 }
 
 /* Sidebar header button arrow opacity */
@@ -185,7 +201,9 @@ menulist {
 	margin: 0 !important;
 }
 
-#appMenu-popup .toolbaritem-combined-buttons toolbarbutton:not(#appMenu-fxa-label) {
+#appMenu-popup
+	.toolbaritem-combined-buttons
+	toolbarbutton:not(#appMenu-fxa-label) {
 	color: var(--macos-button-menulist-color) !important;
 }
 
@@ -227,6 +245,7 @@ menulist {
 .urlbar-page-action:not([disabled]):hover,
 #urlbar-go-button:hover,
 .search-go-button:hover,
-#identity-box[pageproxystate="valid"].extensionPage > .identity-box-button:hover:not([open]) {
+#identity-box[pageproxystate="valid"].extensionPage
+	> .identity-box-button:hover:not([open]) {
 	--urlbar-box-hover-bgcolor: var(--macos-button-hover-color) !important;
 }

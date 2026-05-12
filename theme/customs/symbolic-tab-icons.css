@@ -3,12 +3,14 @@
 /* Icons light/dark fix coloring hack filters */
 
 :root {
-	--macos-convert-icon-to-symbolic-hack-filter: invert(100%) sepia(100%) grayscale(100%) brightness(200%) brightness(85%) invert(100%);
+	--macos-convert-icon-to-symbolic-hack-filter: invert(100%) sepia(100%)
+		grayscale(100%) brightness(200%) brightness(85%) invert(100%);
 }
 
 @media (prefers-color-scheme: dark) {
 	:root {
-		--macos-convert-icon-to-symbolic-hack-filter: invert(100%) sepia(100%) grayscale(100%) brightness(200%) brightness(85%);
+		--macos-convert-icon-to-symbolic-hack-filter: invert(100%) sepia(100%)
+			grayscale(100%) brightness(200%) brightness(85%);
 	}
 }
 

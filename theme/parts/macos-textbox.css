@@ -7,8 +7,8 @@
 #urlbar,
 .findbar-textbox,
 input[type="text"] {
-	font: menu !important;
 	color: var(--macos-urlbar-color) !important;
+	font: menu !important;
 
 	:-moz-window-inactive {
 		color: var(--macos-inactive-urlbar-color) !important;
@@ -19,12 +19,12 @@ input[type="text"] {
 .searchbar-textbox,
 #urlbar {
 	margin: 0 !important;
-	padding: 0 !important;
-	border: none !important;
 	outline: none !important;
 	box-shadow: none !important;
-	color: inherit !important;
+	border: none !important;
 	background-color: transparent !important;
+	padding: 0 !important;
+	color: inherit !important;
 }
 
 #urlbar {
@@ -41,26 +41,26 @@ input[type="text"] {
 .urlbar-input-container,
 .findbar-textbox,
 input[type="text"] {
-	border: none !important;
+	transition: none !important;
 	box-shadow: var(--macos-urlbar-box-shadow) !important;
+	border: none !important;
 	background-color: var(--macos-urlbar-background) !important;
 	padding: 2px 6px !important;
-	transition: none !important;
 }
 
 #searchbar {
-	height: 100% !important;
 	border-radius: var(--macos-headerbar-border-radius) !important;
+	height: 100% !important;
 }
 
 .urlbar-input-container {
-	height: var(--macos-headerbar-content-height) !important;
 	border-radius: var(--macos-headerbar-border-radius) !important;
+	height: var(--macos-headerbar-content-height) !important;
 }
 
 .findbar-textbox {
-	height: 22px !important;
 	border-radius: 6px !important;
+	height: 22px !important;
 }
 
 /* Outline: textbox not focused */
@@ -68,11 +68,11 @@ input[type="text"] {
 #searchbar,
 .findbar-textbox,
 input[type="text"] {
-	outline-offset: -1px !important;
-	outline-style: solid !important;
-	outline-color: transparent !important;
-	outline-width: 24px !important;
 	transition: none !important;
+	outline-color: transparent !important;
+	outline-style: solid !important;
+	outline-width: 24px !important;
+	outline-offset: -1px !important;
 }
 
 /* Outline: textbox focused */
@@ -80,10 +80,11 @@ input[type="text"] {
 #searchbar:focus-within,
 .findbar-textbox:focus,
 input[type="text"]:focus-visible {
+	transition:
+		outline-color 0.5s cubic-bezier(0, 1, 0.1, 1),
+		outline-width 0.5s cubic-bezier(0, 1, 0.1, 1) !important;
 	outline-color: var(--macos-focused-urlbar-border-color) !important;
 	outline-width: 4px !important;
-	transition: outline-color 0.5s cubic-bezier(0, 1, 0.1, 1),
-		outline-width 0.5s cubic-bezier(0, 1, 0.1, 1) !important;
 }
 
 /* Cursor not focused */

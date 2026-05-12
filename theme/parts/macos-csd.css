@@ -9,7 +9,9 @@
 
 /* Window buttons: at least 1 button */
 
-@media (-moz-gtk-csd-minimize-button), (-moz-gtk-csd-maximize-button), (-moz-gtk-csd-close-button) {
+@media (-moz-gtk-csd-minimize-button),
+	(-moz-gtk-csd-maximize-button),
+	(-moz-gtk-csd-close-button) {
 	:root:not([inFullscreen]) #nav-bar {
 		padding-right: 60px !important;
 	}
@@ -43,23 +45,23 @@
 
 :root:not([inFullscreen]) #TabsToolbar .titlebar-buttonbox-container,
 :root:not([inFullscreen]) #TabsToolbar-buttonbox-container {
+	display: block !important;
+	position: absolute !important;
+	top: 15px;
+	left: 2px;
 	appearance: none;
 	-moz-appearance: none !important;
 	padding: 0 3px 0 4px;
-	position: absolute !important;
-	left: 2px;
-	top: 15px;
-	display: block !important;
 }
 
 :root[inFullscreen] #window-controls {
+	display: block !important;
+	position: absolute !important;
+	top: 10px !important;
+	left: 8px;
 	appearance: none;
 	-moz-appearance: none !important;
 	padding: 0 3px 0 4px;
-	position: absolute !important;
-	left: 8px;
-	display: block !important;
-	top: 10px !important;
 }
 
 /* Left window buttons */
@@ -72,9 +74,9 @@
 	/* Window buttons box */
 
 	:root #TabsToolbar .titlebar-buttonbox-container {
-		padding: 0 3px 0 4px;
-		left: 8px;
 		right: auto;
+		left: 8px;
+		padding: 0 3px 0 4px;
 	}
 
 	/* Remove tabsbar titlebar blank spaces */
@@ -86,8 +88,8 @@
 	/* Prevent menubar from breaking */
 
 	:root #toolbar-menubar:not([inactive="true"]) {
-		height: 30px !important;
 		margin-bottom: 8px;
+		height: 30px !important;
 	}
 
 	/* Remove default style of titlebar */

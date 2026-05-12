@@ -3,15 +3,15 @@
 @namespace xul "http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul";
 
 #nav-bar {
-	padding: 8px 16px 8px 86px !important;
-	margin: 0 !important;
 	transition: none !important;
+	margin: 0 !important;
+	padding: 8px 16px 8px 86px !important;
 
 	/* Header bar CSD colours */
 	:root & {
+		box-shadow: none !important;
 		border: none !important;
 		border-bottom: none !important;
-		box-shadow: none !important;
 
 		&:-moz-window-inactive {
 			box-shadow: none !important;
@@ -23,8 +23,8 @@
 	toolbarbutton,
 	toolbaritem {
 		margin: 0 !important;
-		padding: 0 !important;
 		background-color: transparent !important;
+		padding: 0 !important;
 	}
 
 	/* Header bar buttons appearance */
@@ -40,12 +40,12 @@
 		toolbarbutton {
 		margin-inline: 2px !important;
 		outline: none !important;
-		border: none !important;
 		box-shadow: none !important;
-		background-color: transparent !important;
+		border: none !important;
 		border-radius: var(--macos-headerbar-border-radius) !important;
-		height: var(--macos-headerbar-content-height) !important;
+		background-color: transparent !important;
 		width: var(--macos-headerbar-content-height) !important;
+		height: var(--macos-headerbar-content-height) !important;
 		color: var(--macos-headerbar-color) !important;
 	}
 
@@ -53,16 +53,22 @@
 	& > toolbarbutton,
 	& > toolbaritem toolbarbutton,
 	#nav-bar-customization-target > toolbarbutton,
-	#nav-bar-customization-target > toolbaritem:not(#urlbar-container):not(#search-container) toolbarbutton {
+	#nav-bar-customization-target
+		> toolbaritem:not(#urlbar-container):not(#search-container)
+		toolbarbutton {
 		&:not([disabled]) {
 			/* :hover */
 			&:not([checked]):hover {
-				background-color: var(--macos-headerbar-button-hover-background) !important;
+				background-color: var(
+					--macos-headerbar-button-hover-background
+				) !important;
 			}
 
 			/* :active */
 			&:is(:not(#hack):active, [open], [checked]) {
-				background-color: var(--macos-headerbar-button-active-background) !important;
+				background-color: var(
+					--macos-headerbar-button-active-background
+				) !important;
 			}
 		}
 	}
@@ -85,12 +91,12 @@
 	#nav-bar-customization-target
 		> toolbarpaletteitem
 		> toolbaritem:is(#urlbar-container, #search-container) {
+		margin: 0 2px !important;
 		outline: none !important;
-		border: none !important;
 		box-shadow: none !important;
+		border: none !important;
 		background-color: transparent !important;
 		padding: 0 !important;
-		margin: 0 2px !important;
 		height: var(--macos-headerbar-content-height) !important;
 	}
 }

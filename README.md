@@ -12,7 +12,6 @@ A macOS-styled Firefox CSS theme based on [Firefox WhiteSur theme](https://githu
 1. If a `chrome` folder does not already exist in your profile directory, create one.
 1. Clone this repository into the `chrome` folder.
 1. Go to `about:config` and enable:
-
     - `toolkit.legacyUserProfileCustomizations.stylesheets`
     - `svg.context-properties.content.enabled`
     - `layout.css.color-mix.enabled`
@@ -27,22 +26,22 @@ Configuration is done through `userChrome.css` and `userContent.css`. Available 
 
 ### `userChrome.css`
 
--   `extension-menu-in-grid.css` (enabled by default)
+- `extension-menu-in-grid.css` (enabled by default)
 
     <img width="50%" src="assets/extension-menu-in-grid.png">
 
--   `hide-single-tab.css` (requires removing buttons from the tab bar)
+- `hide-single-tab.css` (requires removing buttons from the tab bar)
 
     <img width="50%" src="assets/hide-single-tab.png">
 
--   `mini-tabbar.css`
+- `mini-tabbar.css`
 
     <img width="50%" src="assets/mini-tabbar.png">
 
 ### `userContent.css`
 
--   `apple-style-homepage.css`
--   `apple-style-twp-popup.css`
+- `apple-style-homepage.css`
+- `apple-style-twp-popup.css`
 
 Full list of modules is available in `chrome/theme/customs`.
 

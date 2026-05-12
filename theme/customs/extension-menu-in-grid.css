@@ -16,17 +16,17 @@
 		& > .toolbaritem-combined-buttons,
 		& > toolbarpaletteitem,
 		& > .unified-extensions-item {
-			width: 60.6px !important;
-			height: 60.6px !important;
-			max-width: none !important;
-			max-height: none !important;
-			padding: 0 !important;
 			margin: 0 !important;
+			padding: 0 !important;
+			width: 60.6px !important;
+			max-width: none !important;
+			height: 60.6px !important;
+			max-height: none !important;
 
 			image {
-				height: 26px !important;
-				width: 26px !important;
 				margin: auto !important;
+				width: 26px !important;
+				height: 26px !important;
 			}
 		}
 
@@ -41,8 +41,8 @@
 		/* Animation for widget overflow list re-arrangement */
 		&:is(.widget-overflow-list, #widget-overflow-fixed-list)
 			> toolbarpaletteitem:not([notransition])[place="panel"] {
-			border-block-width: 0 !important;
 			transition: padding var(--drag-drop-transition-duration) ease-in-out !important;
+			border-block-width: 0 !important;
 
 			&[dragover="before"] {
 				padding-inline-start: 20px !important;
@@ -84,10 +84,10 @@
 #unified-extensions-view
 	#overflowed-extensions-list
 	.unified-extensions-item-action-button {
+	margin: 0 !important;
+	padding: 0 !important;
 	width: 100% !important;
 	height: 100% !important;
-	padding: 0 !important;
-	margin: 0 !important;
 }
 
 #widget-overflow-mainView .toolbarbutton-1 > .toolbarbutton-badge-stack,
@@ -103,12 +103,12 @@
 	.unified-extensions-list
 	.unified-extensions-item-action-button {
 	display: grid !important;
-	width: 100% !important;
-	height: 100% !important;
-	padding: 20% !important;
-	margin: 0 !important;
 	justify-content: center;
 	align-items: center;
+	margin: 0 !important;
+	padding: 20% !important;
+	width: 100% !important;
+	height: 100% !important;
 }
 
 #unified-extensions-view .subviewbutton {

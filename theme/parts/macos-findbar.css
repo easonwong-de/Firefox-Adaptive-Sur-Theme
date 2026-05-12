@@ -7,20 +7,20 @@ findbar {
 }
 
 .findbar-container {
-	width: calc(100% - 42px);
-	height: auto !important;
-	padding: 6px !important;
 	display: flex;
-	justify-content: center;
 	position: relative;
 	flex-direction: row;
+	justify-content: center;
+	padding: 6px !important;
+	width: calc(100% - 42px);
+	height: auto !important;
 }
 
 hbox[anonid="findbar-textbox-wrapper"] {
+	display: flex !important;
 	position: absolute;
 	right: calc(50vw - 36px);
 	transform: translate(50%, 0);
-	display: flex !important;
 }
 
 .findbar-find-status,
@@ -30,14 +30,14 @@ hbox[anonid="findbar-textbox-wrapper"] {
 }
 
 .findbar-find-status {
-	padding-left: 6px;
 	flex: 1;
+	padding-left: 6px;
 }
 
 .findbar-closebutton {
 	margin: 6px !important;
-	padding: 0 0 !important;
 	border-radius: 100px !important;
+	padding: 0 0 !important;
 }
 
 .findbar-closebutton:hover {

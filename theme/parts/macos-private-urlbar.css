@@ -2,35 +2,41 @@
 
 @namespace xul "http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul";
 
-:root[privatebrowsingmode="temporary"] #nav-bar toolbarspring:first-of-type:before {
-	background: url("../icons/user-not-tracked.svg") no-repeat;
-	background-size: contain;
-	content: "";
+:root[privatebrowsingmode="temporary"]
+	#nav-bar
+	toolbarspring:first-of-type:before {
 	display: block;
 	position: absolute;
+	top: 15px;
+	transform: translate(5px, 0);
+	opacity: 0.3;
+	background: url("../icons/user-not-tracked.svg") no-repeat;
+	background-size: contain;
 	width: 20px;
 	height: 20px;
-	top: 15px;
-	opacity: 0.3;
-	transform: translate(5px, 0);
+	content: "";
 }
 
-:root[privatebrowsingmode="temporary"] #nav-bar toolbarspring:first-of-type:-moz-lwtheme-brighttext:before {
+:root[privatebrowsingmode="temporary"]
+	#nav-bar
+	toolbarspring:first-of-type:-moz-lwtheme-brighttext:before {
 	background-image: url("../icons/user-not-tracked-dark.svg");
 }
 
 @media (prefers-color-scheme: dark) {
-	:root[privatebrowsingmode="temporary"] #nav-bar toolbarspring:first-of-type:before {
-		background: url("../icons/user-not-tracked-dark.svg") no-repeat;
-		background-size: contain;
-		content: "";
+	:root[privatebrowsingmode="temporary"]
+		#nav-bar
+		toolbarspring:first-of-type:before {
 		display: block;
 		position: absolute;
+		top: 15px;
+		transform: translate(5px, 0);
+		opacity: 0.3;
+		background: url("../icons/user-not-tracked-dark.svg") no-repeat;
+		background-size: contain;
 		width: 20px;
 		height: 20px;
-		top: 15px;
-		opacity: 0.3;
-		transform: translate(5px, 0);
+		content: "";
 	}
 }
 

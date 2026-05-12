@@ -22,7 +22,9 @@
 
 	.scrollbutton-up:not([disabled]):hover,
 	.scrollbutton-down:not([disabled]):hover {
-		background-color: var(--macos-tabbar-tab-active-hover-background) !important;
+		background-color: var(
+			--macos-tabbar-tab-active-hover-background
+		) !important;
 	}
 
 	/* Removes spacers */
@@ -46,29 +48,29 @@
 #tabbrowser-tabs {
 	&,
 	#tabbrowser-arrowscrollbox {
-		height: 36px !important;
-		padding: 0 !important;
 		margin: 0 !important;
-		min-width: unset !important;
-		min-height: unset !important;
 		border: none !important;
+		padding: 0 !important;
+		min-width: unset !important;
+		height: 36px !important;
+		min-height: unset !important;
 	}
 }
 
 /* Tabs */
 .tabbrowser-tab {
+	padding: 0 !important;
+	height: 36px !important;
 	color: var(--macos-tabbar-tab-color) !important;
 	font-size: 1em !important;
-	height: 36px !important;
-	padding: 0 !important;
 
 	&:hover {
 		color: var(--macos-tabbar-tab-hover-color) !important;
 	}
 
 	&[selected] {
-		font-weight: 600 !important;
 		color: var(--macos-tabbar-tab-active-color) !important;
+		font-weight: 600 !important;
 	}
 
 	&:-moz-window-inactive {
@@ -112,32 +114,32 @@
 	display: flex !important;
 	justify-content: center !important;
 	align-items: center !important;
-	margin-top: -1px !important;
-	min-width: 100% !important;
-	padding: 0 10px !important;
 	gap: 4px !important;
+	margin-top: -1px !important;
+	padding: 0 10px !important;
+	min-width: 100% !important;
 }
 
 /* Close button */
 .close-icon {
+	padding: 0 !important;
 	width: 16px !important;
 	height: 16px !important;
-	padding: 0 !important;
 }
 
 /* Tab close button */
 .tab-close-button {
 	/* Moves button to left */
 	order: -1 !important;
-	border: none !important;
+	visibility: hidden !important;
+	opacity: 1 !important;
 	box-sizing: content-box !important;
+	margin: 0 !important;
+	border: none !important;
 	border-radius: 4px !important;
+	padding: 0 !important;
 	width: 16px !important;
 	height: 16px !important;
-	padding: 0 !important;
-	margin: 0 !important;
-	opacity: 1 !important;
-	visibility: hidden !important;
 	list-style-image: url("../icons/window-close-symbolic.svg") !important;
 
 	@media (prefers-color-scheme: dark) {
@@ -170,20 +172,20 @@
 .tab-throbber-fallback,
 .tab-close-button,
 .tab-sharing-icon-overlay {
+	margin: 0 !important;
 	width: 16px !important;
 	height: 16px !important;
-	margin: 0 !important;
 }
 
 /* Small audio button hack */
 .tab-audio-button {
 	--button-size-icon-small: 16px !important;
 	--button-min-height-small: 16px !important;
+	margin: 0 !important;
+	padding-top: 16px !important;
 	width: 16px !important;
 	height: 16px !important;
-	margin: 0 !important;
 	height: 100% !important;
-	padding-top: 16px !important;
 }
 
 /* Centres tab content horizontally: left */
@@ -200,10 +202,10 @@
 
 /* Tab label */
 .tab-label-container {
-	min-width: 0 !important;
-	max-width: fit-content !important;
 	/* Centres tab content horizontally: right */
 	margin-right: 0 auto !important;
+	min-width: 0 !important;
+	max-width: fit-content !important;
 
 	&:not([selected], [multiselected]) {
 		opacity: 0.5 !important;
@@ -222,18 +224,18 @@
 /* change background of tabs based on mode to not rely on theme */
 .tab-background {
 	margin: 0 !important;
-	padding: 0 !important;
+	outline: none !important;
 	box-shadow: none !important;
 	border: none !important;
-	border-image: none !important;
 	border-radius: 0 !important;
-	outline: none !important;
+	border-image: none !important;
 	background-image: none !important;
 	background-color: var(--macos-tabbar-tab-background) !important;
+	padding: 0 !important;
 
 	&[selected] {
-		background-color: var(--macos-tabbar-tab-active-background) !important;
 		margin-inline: -1px !important;
+		background-color: var(--macos-tabbar-tab-active-background) !important;
 	}
 
 	.tabbrowser-tab[selected] & {
@@ -241,7 +243,9 @@
 	}
 
 	.tabbrowser-tab:hover &:not([selected]) {
-		background-color: var(--macos-tabbar-tab-active-hover-background) !important;
+		background-color: var(
+			--macos-tabbar-tab-active-hover-background
+		) !important;
 	}
 
 	/* Move container lines to the top */
@@ -257,29 +261,29 @@
 /* New container tab indicator */
 .tabbrowser-tab[class*="identity-color-"] {
 	.tab-content::before {
-		content: "";
 		display: block;
 		background-image: var(--identity-icon);
 		background-color: transparent !important;
+		content: "";
 		-moz-context-properties: fill;
 		fill: var(--identity-icon-color);
-		background-size: contain;
-		background-repeat: no-repeat;
-		background-position: center center;
-		min-width: 10px;
-		height: 10px;
 		margin-right: 5px;
 		margin-left: 0 !important;
 		border-radius: 100%;
+		background-position: center center;
+		background-size: contain;
+		background-repeat: no-repeat;
+		min-width: 10px;
+		height: 10px;
 	}
 	&[pinned],
 	&[image],
 	&[busy],
 	&[progress] {
 		.tab-content::before {
-			right: -10px;
-			top: -8px;
 			position: relative;
+			top: -8px;
+			right: -10px;
 			margin-right: -10px;
 		}
 	}
@@ -288,8 +292,8 @@
 /* fix pip on small displays */
 .tab-icon-overlay[pictureinpicture] {
 	top: 3px !important;
-	inset-inline-end: 13px !important;
 	z-index: 1 !important;
+	inset-inline-end: 13px !important;
 	max-width: 10px;
 	max-height: 10px;
 }
@@ -297,8 +301,8 @@
 /* fix spacing on too many tabs */
 .tab-icon-overlay:not([pinned], [sharing]),
 [pictureinpicture] {
-	margin-inline-end: 4px !important;
 	margin-inline-start: 4px !important;
+	margin-inline-end: 4px !important;
 }
 
 /* Fix too many tabs text align */
@@ -332,8 +336,8 @@
 .all-tabs-item:hover:active,
 #allTabsMenu-searchTabs:hover,
 #allTabsMenu-searchTabs:hover:active {
-	color: var(--macos-menu-item-hover-color) !important;
 	background-color: var(--macos-menu-item-hover) !important;
+	color: var(--macos-menu-item-hover-color) !important;
 }
 
 .all-tabs-item:hover .toolbarbutton-text,
@@ -345,8 +349,8 @@
 
 .all-tabs-item:hover:active,
 #allTabsMenu-searchTabs:hover:active {
-	color: var(--macos-menu-item-hover-color) !important;
 	background-color: var(--macos-menu-item-hover) !important;
+	color: var(--macos-menu-item-hover-color) !important;
 }
 
 /* Inactive tab title */
@@ -354,13 +358,18 @@
 	opacity: 0.5 !important;
 }
 
-:root:not([privatebrowsingmode="temporary"]) :is(toolbarbutton, toolbarpaletteitem) + #tabbrowser-tabs,
+:root:not([privatebrowsingmode="temporary"])
+	:is(toolbarbutton, toolbarpaletteitem)
+	+ #tabbrowser-tabs,
 :root[privatebrowsingmode="temporary"]
-	:is(toolbarbutton:not(#firefox-view-button), toolbarpaletteitem:not(#wrapper-firefox-view-button))
+	:is(
+		toolbarbutton:not(#firefox-view-button),
+		toolbarpaletteitem:not(#wrapper-firefox-view-button)
+	)
 	+ #tabbrowser-tabs {
+	margin-inline-start: 0 !important;
 	border-inline-start: none !important;
 	padding-inline-start: 0 !important;
-	margin-inline-start: 0 !important;
 }
 
 /* Misc fixes */
