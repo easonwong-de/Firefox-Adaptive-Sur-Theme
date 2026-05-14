@@ -14,9 +14,6 @@ A macOS-styled Firefox CSS theme based on [Firefox WhiteSur theme](https://githu
 1. Go to `about:config` and enable:
     - `toolkit.legacyUserProfileCustomizations.stylesheets`
     - `svg.context-properties.content.enabled`
-    - `layout.css.color-mix.enabled`
-    - `layout.css.color-mix.color-spaces.enabled` (optional)
-    - `layout.css.backdrop-filter.force-enabled` (optional)
 
 1. Restart Firefox.
 
