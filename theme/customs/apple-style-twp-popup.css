@@ -71,6 +71,9 @@
 	outline: 0.5px solid #101010 !important;
 	border: 1px solid #ffffff33 !important;
 	background-color: #292929b3 !important;
+	font-family:
+		-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans,
+		Ubuntu, Cantarell, "Helvetica Neue", sans-serif !important;
 }
 
 @media (prefers-color-scheme: light) {
