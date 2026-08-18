@@ -2,7 +2,8 @@
 
 A macOS-styled Firefox CSS theme based on [Firefox WhiteSur theme](https://github.com/AdamXweb/WhiteSurFirefoxThemeMacOS) with [Adaptive Tab Bar Colour](https://github.com/easonwong-de/Adaptive-Tab-Bar-Colour) support.
 
-**Note:** This CSS theme is optimised for the **release version of Firefox on macOS**. Compatibility with other platforms or Firefox versions is not guaranteed. As this theme is actively used on my primary device, graphical issues and regressions will be addressed promptly.
+> [!WARNING]
+> **This project is discontinued.** Please consider using [Firefox Simple One Line](https://github.com/easonwong-de/Firefox-Simple-One-Line), [FoxOne](https://github.com/Firnschnee/FoxOne), or [Safari-Firefox](https://github.com/gauravrocks009/safari-firefox) as alternatives.
 
 <img width="45%" src="assets/adaptive-sur-2.png"> <img width="45%" src="assets/adaptive-sur-3.png">
 
